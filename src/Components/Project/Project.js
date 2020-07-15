@@ -5,13 +5,13 @@ import { makeStyles, Paper, Grid, Typography, CardMedia, CardActionArea, Card, G
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    maxWidth: 345
+    maxWidth: 400
   },
-  paper: {
+  card: {
     padding: theme.spacing(1),
-    textAlign: 'center',
+    // textAlign: 'center',
     color: theme.palette.text.secondary,
-  },
+  }
 }));
 
 
@@ -24,11 +24,11 @@ const Project = ({project: {id, name, img, description}}) => {
 
     return (
         <Card className={classes.root}>
-            <CardActionArea>
+            <CardActionArea className={classes.card}>
                 <CardMedia 
                         component="img"
                         alt="Contemplative Reptile"
-                        height="140"
+                        height="300"
                         image={img}
                         title="Contemplative Reptile"
             />
