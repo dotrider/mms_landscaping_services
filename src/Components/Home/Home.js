@@ -1,9 +1,12 @@
 import React from 'react'
+import Display from '../Display/Display'
+
 
 const Home = () => {
     return (
         <div>
             Home
+            <Display/>
         </div>
     )
 }
