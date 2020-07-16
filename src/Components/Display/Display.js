@@ -4,9 +4,6 @@ import data from '../../data'
 import Project from '../Project/Project';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1
-    },
     // control: {
     //   padding: theme.spacing(1)
     // },
@@ -25,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'space-around',
       alignItems: 'center',
       overflow: 'hidden',
-      height: "75vh"
+      height: "80vh"
     }
 
   }));
@@ -39,13 +36,13 @@ const Display = () => {
     const [ projects, setProjects ] = useState(data)
     
     return (
-        <Grid className={classes.root} style={{backgroundColor: 'blue'}} container>
-            {/* <GridListTile key="Subheader"  style={{ height: 'auto' }}>
-                <ListSubheader component="div">December</ListSubheader>
-            </GridListTile> */}
-                  <Grid style={{backgroundColor: 'green'}} className={classes.grid} container spacing={1} item xs={12} >
+        // <div style={{backgroundColor: 'blue',  height: '80vh'}} >
+        //     {/* <GridListTile key="Subheader"  style={{ height: 'auto' }}>
+        //         <ListSubheader component="div">December</ListSubheader>
+        //     </GridListTile> */}
+                  <Grid style={{backgroundColor: '#FFFFFF'}} className={classes.grid} container xs={12}>
                     {projects.map(({img}) => (
-                        <Card className={classes.card}  >
+                        <Card className={classes.card}>
                               <CardActionArea className={classes.activeCard} >
                                   <CardMedia 
                                           component="img"
@@ -58,7 +55,8 @@ const Display = () => {
                         </Card>
                     ))}
                 </Grid>
-        </Grid>
+                
+        // </div>
     )
 }
 
