@@ -5,9 +5,9 @@ import Display from '../Display/Display'
 const Home = () => {
     
     return (
-        <div>
-            Home
-            <Display />
+        <div style={{margin: '0 auto', width: '90vw', height: '80vh', backgroundColor:'red'}}>
+
+                <Display />
         </div>
     )
 }

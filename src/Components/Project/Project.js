@@ -23,17 +23,17 @@ const Project = ({project: {id, name, img, description}}) => {
 
 
     return (
-        <Card className={classes.root}>
-            <CardActionArea className={classes.card}>
-                <CardMedia 
-                        component="img"
-                        alt="Contemplative Reptile"
-                        height="300"
-                        image={img}
-                        title="Contemplative Reptile"
-            />
-            </CardActionArea>
-        </Card>    
+      <Card className={classes.root} >
+      <CardActionArea className={classes.card} >
+          <CardMedia 
+                  component="img"
+                  alt="Contemplative Reptile"
+                  height="300"
+                  image={img}
+                  title="Contemplative Reptile"
+      />
+      </CardActionArea>
+  </Card>   
         );
 }
 

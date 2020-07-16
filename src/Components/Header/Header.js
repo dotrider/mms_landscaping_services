@@ -24,7 +24,7 @@ const Header = () => {
 
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} style={{height: '10vh'}}>
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" className={classes.title}>

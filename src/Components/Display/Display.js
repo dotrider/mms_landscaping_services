@@ -1,39 +1,64 @@
 import React, { useState } from 'react'
-import {Container, Typography, CssBaseline, Grid, makeStyles, GridListTile, ListSubheader, GridList, CardMedia, CardActionArea, Card} from '@material-ui/core';
+import { makeStyles, GridListTile, ListSubheader, GridList, CardMedia, CardActionArea, Card, Grid, List} from '@material-ui/core';
 import data from '../../data'
 import Project from '../Project/Project';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1,
+      flexGrow: 1
+    },
+    // control: {
+    //   padding: theme.spacing(1)
+    // },
+    card: {
+      maxWidth: 350
+    },
+    activeCard: {
+      textAlign: 'center'
+      // color: theme.palette.text.secondary,
+      // width: 500,
+      // height: 250,
+    },
+    grid: {
       display: 'flex',
-      justifyContent: 'center'
-    },
-    paper: {
-      height: 240,
-      width: 200,
-    },
-    control: {
-      padding: theme.spacing(5)
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      overflow: 'hidden',
+      height: "75vh"
     }
+
   }));
+
+  
 
 const Display = () => {
 
     const classes = useStyles();
+    
     const [ projects, setProjects ] = useState(data)
     
-    console.log('display', projects)
-    const mappedProjects = projects.map(project => <Project key={project.img} project={project}/>)
     return (
-        <div className={classes.root}>
-            <GridList cellHeight={180} >
-                    <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-                    <ListSubheader component="div">December</ListSubheader>
-                    </GridListTile>
-                         {mappedProjects}
-            </GridList>
-    </div>
+        <Grid className={classes.root} style={{backgroundColor: 'blue'}} container>
+            {/* <GridListTile key="Subheader"  style={{ height: 'auto' }}>
+                <ListSubheader component="div">December</ListSubheader>
+            </GridListTile> */}
+                  <Grid style={{backgroundColor: 'green'}} className={classes.grid} container spacing={1} item xs={12} >
+                    {projects.map(({img}) => (
+                        <Card className={classes.card}  >
+                              <CardActionArea className={classes.activeCard} >
+                                  <CardMedia 
+                                          component="img"
+                                          alt="Contemplative Reptile"
+                                          height="250"
+                                          image={img}
+                                          title="Contemplative Reptile"
+                                  />
+                              </CardActionArea>
+                        </Card>
+                    ))}
+                </Grid>
+        </Grid>
     )
 }
 
