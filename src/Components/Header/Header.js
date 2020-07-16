@@ -13,6 +13,21 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
+  baseMenu: {
+    marginLeft: 'auto',
+  },
 }));
 
 
@@ -25,18 +40,33 @@ const Header = () => {
 
     return (
         <div className={classes.root} style={{height: '10vh'}}>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h6" className={classes.title}>
-              MMS Landscaping
-            </Typography>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-              <MenuIcon />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
+          <AppBar position="static">
+              <Toolbar >
+                <Typography variant="h6"  >
+                  MMS Landscaping
+                </Typography>
+                    <div className={classes.baseMenu}><div className={classes.sectionMobile}>
+                    <IconButton edge="end"
+                    className={classes.menuButton}
+                    color="inherit" aria-label="menu"
+                    >
+                    <MenuIcon  />
+                    </IconButton>
+                    </div>
+                    <div className={classes.sectionDesktop}>
+                    <Typography variant="h6" className={classes.title} >
+                    About
+                    </Typography>
+                    <Typography variant="h6" className={classes.title} >
+                    Services
+                    </Typography>
+                    </div></div>
+              </Toolbar>
+          </AppBar>
       </div>
     )
 }
 
 export default Header
+
+
