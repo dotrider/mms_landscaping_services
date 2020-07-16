@@ -40,9 +40,9 @@ const Display = () => {
         //     {/* <GridListTile key="Subheader"  style={{ height: 'auto' }}>
         //         <ListSubheader component="div">December</ListSubheader>
         //     </GridListTile> */}
-                  <Grid style={{backgroundColor: '#FFFFFF'}} className={classes.grid} container xs={12}>
+                  <Grid style={{backgroundColor: '#FFFFFF'}} className={classes.grid} container xs={12} spacing={2}>
                     {projects.map(({img}) => (
-                        <Card className={classes.card}>
+                        <Grid className={classes.card} item xs={12} sm={6}>
                               <CardActionArea className={classes.activeCard} >
                                   <CardMedia 
                                           component="img"
@@ -52,7 +52,7 @@ const Display = () => {
                                           title="Contemplative Reptile"
                                   />
                               </CardActionArea>
-                        </Card>
+                        </Grid>
                     ))}
                 </Grid>
                 
