@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Components/Header/Header'
+import Footer from './Components/Footer/Footer'
 import router from './routes'
 import './App.css';
 
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <Header/>
       {router}
+      <Footer/>
     </div>
   );
 }
