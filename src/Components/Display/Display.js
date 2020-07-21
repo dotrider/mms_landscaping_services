@@ -3,6 +3,7 @@ import { makeStyles, GridListTile, ListSubheader, GridList, CardMedia, CardActio
 import data from '../../data'
 import Project from '../Project/Project';
 
+
 const useStyles = makeStyles((theme) => ({
     // control: {
     //   padding: theme.spacing(1)
@@ -40,22 +41,21 @@ const Display = () => {
         //     {/* <GridListTile key="Subheader"  style={{ height: 'auto' }}>
         //         <ListSubheader component="div">December</ListSubheader>
         //     </GridListTile> */}
-                  <Grid style={{backgroundColor: '#FFFFFF'}} className={classes.grid} container xs={12} spacing={2}>
-                    {projects.map(({img}) => (
-                        <Grid className={classes.card} item xs={12} sm={6}>
-                              <CardActionArea className={classes.activeCard} >
-                                  <CardMedia 
-                                          component="img"
-                                          alt="Contemplative Reptile"
-                                          height="250"
-                                          image={img}
-                                          title="Contemplative Reptile"
-                                  />
-                              </CardActionArea>
-                        </Grid>
-                    ))}
-                </Grid>
-                
+                    <Grid style={{backgroundColor: '#FFFFFF'}} className={classes.grid} container xs={12} spacing={2}>
+                  {projects.map(({img}) => (
+                  <Grid className={classes.card} item xs={12} sm={6}>
+                  <CardActionArea className={classes.activeCard} >
+                  <CardMedia
+                  component="img"
+                  alt="Contemplative Reptile"
+                  height="250"
+                  image={img}
+                  title="Contemplative Reptile"
+                  />
+                  </CardActionArea>
+                  </Grid>
+                  ))}
+                  </Grid>         
         // </div>
     )
 }
