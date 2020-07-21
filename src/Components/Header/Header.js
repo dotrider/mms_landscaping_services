@@ -17,6 +17,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     [theme.breakpoints.up('md')]: {
       display: 'flex',
+      justifyContent: 'space-between',
+      width: '175px'
     },
   },
   sectionMobile: {
@@ -45,7 +47,8 @@ const Header = () => {
                 <Typography variant="h6"  >
                   MMS Landscaping
                 </Typography>
-                    <div className={classes.baseMenu}><div className={classes.sectionMobile}>
+                    <div className={classes.baseMenu}>
+                    <div className={classes.sectionMobile}>
                     <IconButton edge="end"
                     className={classes.menuButton}
                     color="inherit" aria-label="menu"
@@ -60,7 +63,8 @@ const Header = () => {
                     <Typography variant="h6" className={classes.title} >
                     Services
                     </Typography>
-                    </div></div>
+                    </div>
+                    </div>
               </Toolbar>
           </AppBar>
       </div>
