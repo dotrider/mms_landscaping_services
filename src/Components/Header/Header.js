@@ -41,7 +41,7 @@ const Header = () => {
 
 
     return (
-        <div className={classes.root} style={{height: '10vh'}}>
+        <div className={classes.root} >
           <AppBar position="static">
               <Toolbar >
                 <Typography variant="h6"  >

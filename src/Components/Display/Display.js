@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'space-around',
       alignItems: 'center',
       overflow: 'hidden',
-      height: "80vh"
+      // height: "80vh"
     }
 
   }));
