@@ -42,7 +42,8 @@ const Header = () => {
 
     return (
         <div className={classes.root} >
-          <AppBar position="static">
+          <AppBar color='primary'
+          position="static">
               <Toolbar >
                 <Typography variant="h6"  >
                   MMS Landscaping
