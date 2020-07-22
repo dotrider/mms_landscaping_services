@@ -2,15 +2,19 @@ import React,{ useState } from 'react'
 import Display from '../Display/Display'
 import Presentation from '../Presentation/Presentation'
 import Carousel from '../Carousel/SiteCarousel'
+import Data from '../../data'
 import './Home.css'
 
 const Home = () => {
+    const [ data, setData ] = useState(Data)
+    console.log('home', data)
+
     
     return (
         <div className='home-container' >
-            <Carousel/>
+            <Carousel data={data}/>
             <Presentation/>
-            <Display />
+            <Display data={data}/>
         </div>
     )
 }
