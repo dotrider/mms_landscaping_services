@@ -12,9 +12,9 @@ const Home = () => {
     
     return (
         <div className='home-container' >
-            <Carousel data={data}/>
-            <Presentation/>
-            <Display data={data}/>
+                <Carousel data={data}/>
+                <Presentation/>
+                <Display data={data}/>
         </div>
     )
 }

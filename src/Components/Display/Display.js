@@ -4,16 +4,17 @@ import { makeStyles, CardMedia, CardActionArea, Grid} from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
 
     card: {
-      maxWidth: 350
+      maxWidth: 325,
+      margin: '.75em'
     },
     activeCard: {
       textAlign: 'center'
     },
     grid: {
       display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'space-around',
-      alignItems: 'center',
+      // flexWrap: 'wrap',
+      justifyContent: 'space-evenly',
+      alignItems: 'space-between',
       overflow: 'hidden',
     }
 
@@ -28,14 +29,14 @@ const Display = ({data}) => {
     
     
     return (
-              <Grid style={{backgroundColor: '#FFFFFF'}} className={classes.grid} container xs={12} spacing={2}>
+              <Grid className={classes.grid} container xs={12} >
                   {data.map(({img, name}) => (
                       <Grid className={classes.card} item xs={12} sm={6}>
-                          <CardActionArea className={classes.activeCard} >
+                          <CardActionArea className={classes.activeCard}>
                               <CardMedia
                                 component="img"
                                 alt={name}
-                                height="250"
+                                height="225"
                                 image={img}
                                 // title="Contemplative Reptile"
                               />

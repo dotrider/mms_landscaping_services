@@ -3,9 +3,9 @@ import { Typography } from '@material-ui/core'
 
 const Presentation = () => {
     return (
-        <div>
+        <div style={{margin: '2.5em auto', padding: '2em'}}>
 
-            <Typography variant="h2">MMS LANDSCAPING</Typography>
+            <Typography variant="h6">MMS LANDSCAPING</Typography>
             <Typography>
                 Irure duis tempor quis proident deserunt adipisicing anim elit magna culpa Lorem voluptate est. 
                 Occaecat pariatur dolore excepteur et. Aliqua veniam aliquip est consectetur nulla nulla. 
