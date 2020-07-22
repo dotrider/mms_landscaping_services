@@ -3,6 +3,7 @@ import Display from '../Display/Display'
 import Presentation from '../Presentation/Presentation'
 import Carousel from '../Carousel/SiteCarousel'
 import Data from '../../data'
+import Contact from '../Contact/Contact'
 import './Home.css'
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
                 <Carousel data={data}/>
                 <Presentation/>
                 <Display data={data}/>
+                <Contact/>
         </div>
     )
 }
