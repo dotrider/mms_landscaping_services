@@ -1,6 +1,6 @@
 import React,{ useState } from 'react'
 import Display from '../Display/Display'
-import Presentation from '../Presentation/Presentation'
+import Presentation from '../intro/Intro'
 import Carousel from '../Carousel/SiteCarousel'
 import Data from '../../data'
 import Contact from '../Contact/Contact'

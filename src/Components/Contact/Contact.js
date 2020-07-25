@@ -1,19 +1,18 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import { Container, Grid, TextField, Button} from '@material-ui/core';
+import './Contact.css'
 
 
 
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      display: 'flex',
-      flexWrap: 'wrap',
+    form: {
+      width: '100%',
+      marginTop: theme.spacing(5),
     },
-    textField: {
-      marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(1),
-      width: '25ch',
+    submit: {
+      margin: theme.spacing(3, 0, 2),
     },
   }));
 
@@ -21,43 +20,71 @@ const Contact = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <form> 
-                <TextField
-                label="Firs Name"
-                id="outlined-margin-dense"
-                className={classes.textField}
-                margin="dense"
-                variant="outlined"
-                />
-                <TextField
-                label="Last Name"
-                id="outlined-margin-normal"
-                className={classes.textField}
-                margin="normal"
-                variant="outlined"
-                />
-                <TextField
-                label="Phone Number"
-                id="outlined-margin-none"
-                className={classes.textField}
-                variant="outlined"
-                />
-                <TextField
-                id="outlined-full-width"
-                label="Label"
-                style={{ margin: 8 }}
-                placeholder="Placeholder"
-                helperText="Full width!"
-                fullWidth
-                margin="normal"
-                InputLabelProps={{
-                    shrink: true,
-                }}
-                variant="outlined"
-                />
+        <Container component="main" maxWidth="xs">
+            <form className={classes.form}> 
+                <Grid container spacing={2}>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                          label="Firs Name"
+                          required
+                          fullWidth
+                          placeholder="First Name..."
+                          id="firstName"
+                          variant="outlined"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6}> 
+                        <TextField
+                          label="Last Name"
+                          required
+                          fullWidth
+                          placeholder="Last Name..."
+                          id="lastName"
+                          variant="outlined"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                          label="Phone Number"
+                          required
+                          fullWidth
+                          placeholder="Phone number..."
+                          id="phoneNumber"
+                          variant="outlined"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                          label="Email"
+                          required
+                          fullWidth
+                          placeholder="Email..."
+                          id="email"
+                          variant="outlined"
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <TextField
+                          id="message"
+                          label="Message"
+                          required
+                          placeholder="Message..."
+                          fullWidth
+                          variant="outlined"
+                        />
+                    </Grid>
+                </Grid>
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  className={classes.submit}
+                >
+                  Send
+                </Button>
             </form> 
-        </div>
+      </Container>
     )
 }
 
