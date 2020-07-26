@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Grid, TextField, Button} from '@material-ui/core';
 import axios from 'axios';
+import Swal from 'sweetalert2'
 import './Contact.css'
-
 
 
 
@@ -34,6 +34,14 @@ const Contact = () => {
     axios.post('/api/email', {firstName, lastName, phoneNumber, userEmail, message }).then(() => {
         // console.log(firstName, lastName, phoneNumber, userEmail, message)
         resetInfo()
+
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Your message has been submited',
+        showConfirmButton: false,
+        timer: 1500
+      })
     }).catch(err => console.log(err))
   }
 
@@ -46,7 +54,7 @@ const Contact = () => {
   }
 
     return (
-        <Container component="main" maxWidth="xs">
+        <Container component="main" maxWidth="sm">
             <form className={classes.form} 
               onSubmit={e => { 
                 e.preventDefault()
@@ -102,9 +110,11 @@ const Contact = () => {
                         <TextField
                           id="message"
                           label="Message"
-                          required
                           placeholder="Message..."
+                          multiline
+                          rows={4}
                           fullWidth
+                          required
                           variant="outlined"
                           value={message}
                           onChange={e => setMessage(e.target.value)}

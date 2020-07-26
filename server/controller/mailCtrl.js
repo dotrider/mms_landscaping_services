@@ -8,7 +8,7 @@ module.exports = {
         const { firstName, lastName, phoneNumber, userEmail, message } = req.body;
         // console.log('name', name, 'userEmail', userEmail, 'message', message)
 
-        const messageContent = `name: ${firstName} ${lastName} \n Phone Number: ${phoneNumber} \n email: ${userEmail} \n message: ${message} `;
+        const messageContent = ` name: ${firstName} ${lastName} \n Phone Number: ${phoneNumber} \n email: ${userEmail} \n message: ${message} `;
             // console.log('messageContent', messageContent)
 
             //type of email service settings
