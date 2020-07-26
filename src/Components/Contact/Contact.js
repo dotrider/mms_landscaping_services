@@ -23,21 +23,26 @@ const Contact = () => {
     const classes = useStyles();
 
     const [ firstName, setFirstName ] = useState(''),
-          [ LastName, setLastName ] = useState(''),
+          [ lastName, setLastName ] = useState(''),
           [ phoneNumber, setPhoneNumber ] = useState(''),
           [ userEmail, setUserEmail ] = useState(''),
           [ message, setMessage ] = useState('');
 
-  // console.log(firstName, LastName, phoneNumber, userEmail, message)
+  // console.log('firsName', firstName)
 
   const submitInfo = () => {
-    axios.post('/api/email', {firstName, LastName, phoneNumber, userEmail, message }).then(() => {
-      setFirstName('')
-      setLastName('')
-      setPhoneNumber('')
-      setUserEmail('')
-      setMessage('')
-    })
+    axios.post('/api/email', {firstName, lastName, phoneNumber, userEmail, message }).then(() => {
+        // console.log(firstName, lastName, phoneNumber, userEmail, message)
+        resetInfo()
+    }).catch(err => console.log(err))
+  }
+
+  const resetInfo = () => {
+    setFirstName('')
+    setLastName('')
+    setPhoneNumber('')
+    setUserEmail('')
+    setMessage('')
   }
 
     return (
@@ -50,12 +55,12 @@ const Contact = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>
                         <TextField
-                          label="Firs Name"
+                          label="First Name"
                           required
                           fullWidth
-                          placeholder="First Name..."
                           id="firstName"
                           variant="outlined"
+                          value={firstName}
                           onChange={e => setFirstName(e.target.value)}
                         />
                     </Grid>
@@ -64,9 +69,9 @@ const Contact = () => {
                           label="Last Name"
                           required
                           fullWidth
-                          placeholder="Last Name..."
                           id="lastName"
                           variant="outlined"
+                          value={lastName}
                           onChange={e => setLastName(e.target.value)}
                         />
                     </Grid>
@@ -75,20 +80,21 @@ const Contact = () => {
                           label="Phone Number"
                           required
                           fullWidth
-                          placeholder="Phone number..."
                           id="phoneNumber"
                           variant="outlined"
+                          value={phoneNumber}
                           onChange={e => setPhoneNumber(e.target.value)}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <TextField
                           label="Email"
+                          type="email"
                           required
                           fullWidth
-                          placeholder="Email..."
                           id="email"
                           variant="outlined"
+                          value={userEmail}
                           onChange={e => setUserEmail(e.target.value)}
                         />
                     </Grid>
@@ -100,6 +106,7 @@ const Contact = () => {
                           placeholder="Message..."
                           fullWidth
                           variant="outlined"
+                          value={message}
                           onChange={e => setMessage(e.target.value)}
                         />
                     </Grid>
