@@ -1,6 +1,6 @@
 import React,{ useState } from 'react'
 import Display from '../Display/Display'
-import Presentation from '../intro/Intro'
+import Intro from '../intro/Intro'
 import Carousel from '../Carousel/SiteCarousel'
 import Data from '../../data'
 import Contact from '../Contact/Contact'
@@ -14,7 +14,7 @@ const Home = () => {
     return (
         <div className='home-container' >
                 <Carousel data={data}/>
-                <Presentation/>
+                <Intro/>
                 <Display data={data}/>
                 <Contact/>
         </div>

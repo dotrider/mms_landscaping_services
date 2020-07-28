@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid, TextField, Button} from '@material-ui/core';
+import { Container, Grid, TextField, Button, Typography } from '@material-ui/core';
 import axios from 'axios';
 import Swal from 'sweetalert2'
 import './Contact.css'
@@ -54,7 +54,10 @@ const Contact = () => {
   }
 
     return (
-        <Container component="main" maxWidth="sm">
+        <Container component="main" maxWidth="sm" style={{padding: '.85em'}}>
+          <Typography variant="h4">Request Your Free Estimate</Typography>
+            <Typography>Contact us now with your questions or to request a Free quote.</Typography>
+
             <form className={classes.form} 
               onSubmit={e => { 
                 e.preventDefault()

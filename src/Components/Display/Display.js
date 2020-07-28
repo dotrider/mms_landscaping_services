@@ -4,8 +4,8 @@ import { makeStyles, CardMedia, CardActionArea, Grid} from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
 
     card: {
-      maxWidth: 325,
-      margin: '.75em'
+      maxWidth: 420,
+      margin: '1em .75em'
     },
     activeCard: {
       textAlign: 'center'
@@ -16,6 +16,8 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'space-evenly',
       alignItems: 'space-between',
       overflow: 'hidden',
+      margin: '3.5em auto',
+      maxWidth: 1390,
     }
 
   }));
@@ -36,7 +38,7 @@ const Display = ({data}) => {
                               <CardMedia
                                 component="img"
                                 alt={name}
-                                height="225"
+                                height="275"
                                 image={img}
                                 // title="Contemplative Reptile"
                               />
