@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
     return (
         <div style={{backgroundColor: 'dodgerBlue', height: '5vh'}}>
-            Footer
+            <p>&copy; Copyright <span> 2020</span></p>
         </div>
     )
 }

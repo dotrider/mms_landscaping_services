@@ -1,5 +1,7 @@
-import React from 'react'
+import React from "react";
 import { makeStyles, CardMedia, CardActionArea, Grid} from '@material-ui/core';
+import './Display.css'
+import cx from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
 
@@ -17,35 +19,38 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'space-between',
       overflow: 'hidden',
       margin: '3.5em auto',
-      maxWidth: 1390,
+      maxWidth: 1390
     }
 
   }));
 
   
 
-const Display = ({data}) => {
+const Display = ({data, sectionRef}) => {
   // console.log('display', data)
   const classes = useStyles();
 
-    
+
+
     
     return (
-              <Grid className={classes.grid} container xs={12} >
-                  {data.map(({img, name}) => (
-                      <Grid className={classes.card} item xs={12} sm={6}>
-                          <CardActionArea className={classes.activeCard}>
-                              <CardMedia
-                                component="img"
-                                alt={name}
-                                height="275"
-                                image={img}
-                                // title="Contemplative Reptile"
-                              />
-                          </CardActionArea>
-                      </Grid>
-                  ))}
-              </Grid>         
+      <div ref={sectionRef}>
+                <Grid className={cx(classes.grid, 'fadeIn')} container xs={12}>
+                    {data.map(({img, name}) => (
+                        <Grid className={classes.card} item xs={12} sm={6}>
+                            <CardActionArea className={classes.activeCard}>
+                                <CardMedia 
+                                  component="img"
+                                  alt={name}
+                                  height="275"
+                                  image={img}
+                                  // title="Contemplative Reptile"
+                                />
+                            </CardActionArea>
+                        </Grid>
+                    ))}
+                </Grid>   
+    </div>      
     )
 }
 
