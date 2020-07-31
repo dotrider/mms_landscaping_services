@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { makeStyles, Paper, Grid, Typography, CardMedia, CardActionArea, Card, GridListTile } from '@material-ui/core';
-
+import axios from 'axios'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,24 +16,33 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const Project = ({project: {id, name, img, description}}) => {
-    console.log('name', name)
+const Project = (props) => {
+console.log('props', props)
 
     const classes = useStyles();
 
+    const [ project, setProject ] = useState({})
+    
+  console.log('project', project)
+
+    useEffect(() => {
+      axios.get(`/project/${props.match.params.id}`).then( res => {
+        setProject(res.data)
+      })
+    },[])
 
     return (
       <Card className={classes.root} >
-      <CardActionArea className={classes.card} >
-          <CardMedia 
-                  component="img"
-                  alt="Contemplative Reptile"
-                  height="300"
-                  image={img}
-                  title="Contemplative Reptile"
-      />
-      </CardActionArea>
-  </Card>   
+          <CardActionArea className={classes.card} >
+              <CardMedia 
+                      component="img"
+                      alt="Contemplative Reptile"
+                      height="300"
+                      // image={img}
+                      title="Contemplative Reptile"
+              />
+          </CardActionArea>
+      </Card>   
         );
 }
 
