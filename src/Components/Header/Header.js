@@ -1,7 +1,9 @@
-import React from 'react'
-import { makeStyles, AppBar, Toolbar, Typography, IconButton} from '@material-ui/core';
+import React, { useState } from 'react'
+import { makeStyles, AppBar, Toolbar, Typography, IconButton, ListItemText, ListItemIcon, ListItem, List, Drawer, useTheme  } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
+import clsx from 'clsx';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,6 +32,12 @@ const useStyles = makeStyles((theme) => ({
   baseMenu: {
     marginLeft: 'auto',
   },
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  }
 }));
 
 
@@ -38,7 +46,42 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
 
     const classes = useStyles();
+ 
+    const [ mobileMenu, setMobileMenu ] = useState(false);
 
+
+
+    
+  //handles mobile menu showing and closing if option is selected or if click outside drawer
+    const toggleDrawer = (anchor, open) => (event) => {
+      if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+        return;
+      }
+  
+      setMobileMenu({ ...mobileMenu, [anchor]: open });
+    };
+
+
+    ///handles styles and renders mobile menu text/icons
+    const list = (anchor) => (
+      <div
+        className={clsx(classes.list, {
+          [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+        })}
+        role="presentation"
+        onClick={toggleDrawer(anchor, false)}
+        onKeyDown={toggleDrawer(anchor, false)}
+      >
+        <List>
+          {['About', 'Services'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+     </div>
+    );
 
     return (
         <div className={classes.root} >
@@ -49,25 +92,32 @@ const Header = () => {
                   MMS Landscaping
                 </Typography>
                     <div className={classes.baseMenu}>
-                    <div className={classes.sectionMobile}>
-                    <IconButton edge="end"
-                    className={classes.menuButton}
-                    color="inherit" aria-label="menu"
-                    >
-                    <MenuIcon  />
-                    </IconButton>
-                    </div>
-                    <div className={classes.sectionDesktop}>
-                    <Typography variant="h6" className={classes.title} >
-                    About
-                    </Typography>
-                    <Typography variant="h6" className={classes.title} >
-                    Services
-                    </Typography>
-                    </div>
+                        <div className={classes.sectionMobile}>
+                            <IconButton edge="end"
+                              className={classes.menuButton}
+                              color="inherit" aria-label="menu"
+                              onClick={toggleDrawer('right', true)}
+                              >
+                              <MenuIcon  />
+                            </IconButton>
+                        </div>
+                        <div className={classes.sectionDesktop}>
+                            <Typography variant="h6" className={classes.title} >
+                                About
+                            </Typography>
+                            <Typography variant="h6" className={classes.title} >
+                            Services
+                            </Typography>
+                        </div>
                     </div>
               </Toolbar>
           </AppBar>
+          <Drawer 
+              anchor={'right'} open={mobileMenu['right']} onClose={toggleDrawer('right', false)}
+          >
+                {list('right')}
+          </Drawer>
+  
       </div>
     )
 }

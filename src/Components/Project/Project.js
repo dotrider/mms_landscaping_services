@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { makeStyles, CardMedia, CardActionArea, Card } from '@material-ui/core';
+import { makeStyles, CardMedia, Paper, Card } from '@material-ui/core';
 import data from '../../data'
-
+import './Project.css'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -32,16 +32,17 @@ const Project = (props) => {
 
     const { img, name } = project
     return (
-      <Card className={classes.root} >
-          <CardActionArea className={classes.card} >
-              <CardMedia 
-                      component="img"
-                      alt={name}
-                      height="300"
-                      image={img}
-              />
-          </CardActionArea>
-      </Card>   
+      <section className='project-cont'>
+        <Paper className={classes.root} >
+                <CardMedia 
+                        className={classes.card}
+                        component="img"
+                        alt={name}
+                        height="300"
+                        image={img}
+                />
+        </Paper>   
+      </section>
         );
 }
 

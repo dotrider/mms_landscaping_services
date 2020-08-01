@@ -54,87 +54,89 @@ const Contact = () => {
   }
 
     return (
-        <Container component="main" maxWidth="sm" style={{padding: '.85em'}}>
-          <Typography variant="h4">Request Your Free Estimate</Typography>
-            <Typography>Contact us now with your questions or to request a Free quote.</Typography>
-
-            <form className={classes.form} 
-              onSubmit={e => { 
-                e.preventDefault()
-                submitInfo()
-              }}> 
-                <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6}>
-                        <TextField
-                          label="First Name"
-                          required
-                          fullWidth
-                          id="firstName"
-                          variant="outlined"
-                          value={firstName}
-                          onChange={e => setFirstName(e.target.value)}
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6}> 
-                        <TextField
-                          label="Last Name"
-                          required
-                          fullWidth
-                          id="lastName"
-                          variant="outlined"
-                          value={lastName}
-                          onChange={e => setLastName(e.target.value)}
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <TextField
-                          label="Phone Number"
-                          required
-                          fullWidth
-                          id="phoneNumber"
-                          variant="outlined"
-                          value={phoneNumber}
-                          onChange={e => setPhoneNumber(e.target.value)}
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <TextField
-                          label="Email"
-                          type="email"
-                          required
-                          fullWidth
-                          id="email"
-                          variant="outlined"
-                          value={userEmail}
-                          onChange={e => setUserEmail(e.target.value)}
-                        />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <TextField
-                          id="message"
-                          label="Message"
-                          placeholder="Message..."
-                          multiline
-                          rows={4}
-                          fullWidth
-                          required
-                          variant="outlined"
-                          value={message}
-                          onChange={e => setMessage(e.target.value)}
-                        />
-                    </Grid>
-                </Grid>
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  color="primary"
-                  className={classes.submit}
-                >
-                  Send
-                </Button>
-            </form> 
-      </Container>
+        <div style={{marginBottom: '5em'}}>
+        	<Container component="main" maxWidth="sm" style={{padding: '.85em'}}>
+        	  <Typography variant="h4">Request Your Free Estimate</Typography>
+        	    <Typography>Contact us now with your questions or to request a Free quote.</Typography>
+        
+        	    <form className={classes.form} 
+        	      onSubmit={e => { 
+        	        e.preventDefault()
+        	        submitInfo()
+        	      }}> 
+        	        <Grid container spacing={2}>
+        	            <Grid item xs={12} sm={6}>
+        	                <TextField
+        	                  label="First Name"
+        	                  required
+        	                  fullWidth
+        	                  id="firstName"
+        	                  variant="outlined"
+        	                  value={firstName}
+        	                  onChange={e => setFirstName(e.target.value)}
+        	                />
+        	            </Grid>
+        	            <Grid item xs={12} sm={6}> 
+        	                <TextField
+        	                  label="Last Name"
+        	                  required
+        	                  fullWidth
+        	                  id="lastName"
+        	                  variant="outlined"
+        	                  value={lastName}
+        	                  onChange={e => setLastName(e.target.value)}
+        	                />
+        	            </Grid>
+        	            <Grid item xs={12} sm={6}>
+        	                <TextField
+        	                  label="Phone Number"
+        	                  required
+        	                  fullWidth
+        	                  id="phoneNumber"
+        	                  variant="outlined"
+        	                  value={phoneNumber}
+        	                  onChange={e => setPhoneNumber(e.target.value)}
+        	                />
+        	            </Grid>
+        	            <Grid item xs={12} sm={6}>
+        	                <TextField
+        	                  label="Email"
+        	                  type="email"
+        	                  required
+        	                  fullWidth
+        	                  id="email"
+        	                  variant="outlined"
+        	                  value={userEmail}
+        	                  onChange={e => setUserEmail(e.target.value)}
+        	                />
+        	            </Grid>
+        	            <Grid item xs={12}>
+        	                <TextField
+        	                  id="message"
+        	                  label="Message"
+        	                  placeholder="Message..."
+        	                  multiline
+        	                  rows={4}
+        	                  fullWidth
+        	                  required
+        	                  variant="outlined"
+        	                  value={message}
+        	                  onChange={e => setMessage(e.target.value)}
+        	                />
+        	            </Grid>
+        	        </Grid>
+        	        <Button
+        	          type="submit"
+        	          fullWidth
+        	          variant="contained"
+        	          color="primary"
+        	          className={classes.submit}
+        	        >
+        	          Send
+        	        </Button>
+        	    </form> 
+              </Container>
+        </div>
     )
 }
 
