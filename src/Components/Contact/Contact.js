@@ -54,9 +54,9 @@ const Contact = () => {
   }
 
     return (
-        <div style={{marginBottom: '5em'}}>
+        <section style={{marginBottom: '5em'}}>
         	<Container component="main" maxWidth="sm" style={{padding: '.85em'}}>
-        	  <Typography variant="h4">Request Your Free Estimate</Typography>
+        	  <Typography variant="h5">Request Your Free Estimate</Typography>
         	    <Typography>Contact us now with your questions or to request a Free quote.</Typography>
         
         	    <form className={classes.form} 
@@ -136,7 +136,7 @@ const Contact = () => {
         	        </Button>
         	    </form> 
               </Container>
-        </div>
+        </section>
     )
 }
 

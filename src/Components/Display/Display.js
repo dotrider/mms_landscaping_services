@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, CardMedia, CardActionArea, Grid} from '@material-ui/core';
+import { makeStyles, CardMedia, CardActionArea, Grid, Typography} from '@material-ui/core';
 import './Display.css'
 import cx from 'classnames'
 import { Link } from 'react-router-dom'
@@ -34,7 +34,8 @@ const Display = ({data, sectionRef}) => {
 
     
     return (
-      <div ref={sectionRef}>
+      <section ref={sectionRef}>
+              <Typography variant='h5'>Our Services</Typography>
                 <Grid className={cx(classes.gridCont, 'fadeIn')} container xs={12}>
                     {data.map(({img, name, id}) => (
                         <Grid className={classes.card} item xs={12} sm={6}>
@@ -52,7 +53,7 @@ const Display = ({data, sectionRef}) => {
                         </Grid>
                     ))}
                 </Grid>   
-    </div>      
+    </section>      
     )
 }
 

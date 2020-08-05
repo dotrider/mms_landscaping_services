@@ -87,7 +87,7 @@ const Header = () => {
     );
 
     return (
-        <div className={classes.root} >
+        <header className={classes.root} >
           <AppBar color='primary'
                   position="relative"
                   className={classes.backdrop}        
@@ -96,7 +96,7 @@ const Header = () => {
                 <Typography variant="h6"  >
                   MMS Landscaping
                 </Typography>
-                    <div className={classes.baseMenu}>
+                    <nav className={classes.baseMenu}>
                         <div className={classes.sectionMobile}>
                             <IconButton edge="end"
                               className={classes.menuButton}
@@ -114,7 +114,7 @@ const Header = () => {
                             Services
                             </Typography>
                         </div>
-                    </div>
+                    </nav>
               </Toolbar>
           </AppBar>
           <Drawer 
@@ -124,7 +124,7 @@ const Header = () => {
                 {list('right')}
           </Drawer>
   
-      </div>
+      </header>
     )
 }
 

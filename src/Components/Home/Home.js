@@ -48,12 +48,12 @@ const Home = () => {
   
     
     return (
-        <div className='home-container' >
+        <main className='home-container' >
                 <Carousel data={data}/>
                 <Intro/>
                 <Display data={data} sectionRef={sectionRef}/>
             	<Contact/>
-        </div>
+        </main>
     )
 }
 
