@@ -4,6 +4,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import clsx from 'clsx';
+import './Header.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -93,7 +94,7 @@ const Header = () => {
                   className={classes.backdrop}        
           >
               <Toolbar >
-                <Typography variant="h6"  >
+                <Typography variant="h6" className='header-font' >
                   MMS Landscaping
                 </Typography>
                     <nav className={classes.baseMenu}>

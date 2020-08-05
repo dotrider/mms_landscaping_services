@@ -67,6 +67,7 @@ const Contact = () => {
         	        <Grid container spacing={2}>
         	            <Grid item xs={12} sm={6}>
         	                <TextField
+							  className='form-inputs'
         	                  label="First Name"
         	                  required
         	                  fullWidth
@@ -78,6 +79,7 @@ const Contact = () => {
         	            </Grid>
         	            <Grid item xs={12} sm={6}> 
         	                <TextField
+							  className='form-inputs'
         	                  label="Last Name"
         	                  required
         	                  fullWidth
@@ -89,6 +91,7 @@ const Contact = () => {
         	            </Grid>
         	            <Grid item xs={12} sm={6}>
         	                <TextField
+							  className='form-inputs'	
         	                  label="Phone Number"
         	                  required
         	                  fullWidth
@@ -100,6 +103,7 @@ const Contact = () => {
         	            </Grid>
         	            <Grid item xs={12} sm={6}>
         	                <TextField
+							  className='form-inputs'
         	                  label="Email"
         	                  type="email"
         	                  required

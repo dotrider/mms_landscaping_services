@@ -14,7 +14,13 @@ const theme = createMuiTheme({
       dark: '#ba000d',
       contrastText: '#000',
     },
-  },
+  }
+  // typography: {
+  //   fontFamily: [
+  //     'Montserrat Alternates',
+  //     'sans-serif'
+  //   ].join(',')
+  // }
 });
 
 export default theme

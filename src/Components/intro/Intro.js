@@ -1,11 +1,12 @@
 import React from 'react'
 import { Typography } from '@material-ui/core'
+import './Intro.css'
 
 const Presentation = () => {
     return (
-        <section style={{margin: '2.5em auto', padding: '1.3em'}}>
+        <section className='intro-container'>
 
-            <Typography variant="h5">MMS LANDSCAPING</Typography>
+            <Typography variant="h5">MMS Landscaping</Typography>
             <Typography>
                 Irure duis tempor quis proident deserunt adipisicing anim elit magna culpa Lorem voluptate est. 
                 Occaecat pariatur dolore excepteur et. Aliqua veniam aliquip est consectetur nulla nulla. 
