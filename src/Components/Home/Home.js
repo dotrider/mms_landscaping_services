@@ -18,15 +18,15 @@ const Home = () => {
     const intersection = useIntersection(sectionRef, {
       root: null,
       rootMargin: '0px',
-      threshold: 0.2
+      threshold: 0.1
     })
   
   
     const fadeIn = (classname) => {
         gsap.to(classname, 1, {
           opacity: 1,
-          y: -60,
-          ease: 'back.out'
+          y: -20,
+          ease: 'slow'
         })
     }
   
@@ -35,14 +35,14 @@ const Home = () => {
       gsap.to(classname, 1, {
         opacity: 0,
         y: -20,
-        ease: 'back.out',
+        ease: 'slow',
         stagger: {
           amount: .3
         }
       })
     }
   
-    intersection && intersection.intersectionRatio < 0.2?
+    intersection && intersection.intersectionRatio < 0.1?
       fadeOut('.fadeIn')
     : fadeIn('.fadeIn')
   
