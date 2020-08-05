@@ -7,15 +7,14 @@ import { Link } from 'react-router-dom'
 const useStyles = makeStyles((theme) => ({
 
     card: {
-      maxWidth: 420,
-      margin: '1em .75em'
+      maxWidth: 335,
+      margin: '1em .75em',
     },
     activeCard: {
       textAlign: 'center'
     },
-    grid: {
+    gridCont: {
       display: 'flex',
-      // flexWrap: 'wrap',
       justifyContent: 'space-evenly',
       alignItems: 'space-between',
       overflow: 'hidden',
@@ -36,7 +35,7 @@ const Display = ({data, sectionRef}) => {
     
     return (
       <div ref={sectionRef}>
-                <Grid className={cx(classes.grid, 'fadeIn')} container xs={12}>
+                <Grid className={cx(classes.gridCont, 'fadeIn')} container xs={12}>
                     {data.map(({img, name, id}) => (
                         <Grid className={classes.card} item xs={12} sm={6}>
                             <Link to={`/project/${id}`}>
@@ -44,7 +43,7 @@ const Display = ({data, sectionRef}) => {
                             	    <CardMedia 
                             	      component="img"
                             	      alt={name}
-                            	      height="275"
+                            	      height="240"
                             	      image={img}
                             	      // title="Contemplative Reptile"
                             	    />

@@ -65,7 +65,7 @@ const Header = () => {
     };
 
 
-    ///handles styles and renders mobile menu text/icons
+    ///handles styles ex. Drawer width and renders mobile menu text/icons
     const list = (anchor) => (
       <div
         className={clsx(classes.list, {
