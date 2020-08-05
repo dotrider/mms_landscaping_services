@@ -9,9 +9,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
+  // menuButton: {
+  //   marginRight: 'auto',
+  // },
   title: {
     flexGrow: 1,
   },
@@ -29,15 +29,18 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  
   baseMenu: {
     marginLeft: 'auto',
   },
+
   list: {
     width: 250,
   },
   fullList: {
     width: 'auto',
   }
+
 }));
 
 
@@ -86,7 +89,9 @@ const Header = () => {
     return (
         <div className={classes.root} >
           <AppBar color='primary'
-          position="static">
+                  position="relative"
+                  className={classes.backdrop}        
+          >
               <Toolbar >
                 <Typography variant="h6"  >
                   MMS Landscaping
@@ -98,7 +103,7 @@ const Header = () => {
                               color="inherit" aria-label="menu"
                               onClick={toggleDrawer('right', true)}
                               >
-                              <MenuIcon  />
+                                <MenuIcon  />
                             </IconButton>
                         </div>
                         <div className={classes.sectionDesktop}>
@@ -113,6 +118,7 @@ const Header = () => {
               </Toolbar>
           </AppBar>
           <Drawer 
+              varient='persistent'
               anchor={'right'} open={mobileMenu['right']} onClose={toggleDrawer('right', false)}
           >
                 {list('right')}
