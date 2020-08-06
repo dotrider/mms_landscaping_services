@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles, CardMedia, ListItem, List, Typography, ListItemText, ListItemIcon, Grid } from '@material-ui/core';
-import CheckIcon from '@material-ui/icons/Check';
+import CheckRoundedIcon from '@material-ui/icons/CheckRounded'
 import data from '../../data'
 import './Project.css'
 
@@ -64,13 +64,13 @@ const Project = (props) => {
                      >
                      	    <ListItem>
                      	        <ListItemIcon>
-                     	            <CheckIcon />
+                     	            <CheckRoundedIcon color="primary" fontSize='large' />
                      	        </ListItemIcon>
                      	        <ListItemText primary="Ex 1" />
                      	    </ListItem>
-                     	    <ListItem button>
+                     	    <ListItem>
                      	        <ListItemIcon>
-                     	            <CheckIcon />
+                     	            <CheckRoundedIcon color="primary" fontSize='large'/>
                      	        </ListItemIcon>
                      	        <ListItemText primary="Ex 2" />
                      	    </ListItem>

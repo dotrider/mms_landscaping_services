@@ -26,7 +26,7 @@ const Home = () => {
         gsap.to(classname, 1, {
           opacity: 1,
           y: -20,
-          ease: 'slow'
+          ease: 'back'
         })
     }
   
@@ -35,7 +35,7 @@ const Home = () => {
       gsap.to(classname, 1, {
         opacity: 0,
         y: -20,
-        ease: 'slow',
+        ease: 'back',
         stagger: {
           amount: .3
         }
@@ -52,7 +52,7 @@ const Home = () => {
                 <Carousel data={data}/>
                 <Intro/>
                 <Display data={data} sectionRef={sectionRef}/>
-            	<Contact/>
+            	  <Contact sectionRef={sectionRef}/>
         </main>
     )
 }

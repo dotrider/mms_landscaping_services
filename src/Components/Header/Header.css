@@ -5,3 +5,11 @@
         font-size: 1.5rem;
     }
 } */
+
+.links {
+    text-decoration: none !important;
+  }
+
+.links:visited {
+        color: white !important;
+}

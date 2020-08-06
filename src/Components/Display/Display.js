@@ -34,11 +34,11 @@ const Display = ({data, sectionRef}) => {
 
     
     return (
-      <section ref={sectionRef}>
+      <section ref={sectionRef} >
               <Typography variant='h5'>Our Services</Typography>
-                <Grid className={cx(classes.gridCont, 'fadeIn')} container xs={12}>
+                <Grid className={cx(classes.gridCont)} container xs={12}>
                     {data.map(({img, name, id}) => (
-                        <Grid className={classes.card} item xs={12} sm={6}>
+                        <Grid className={cx(classes.card,'fadeIn')} item xs={12} sm={6}>
                             <Link to={`/project/${id}`}>
                             	<CardActionArea className={classes.activeCard}>
                             	    <CardMedia 

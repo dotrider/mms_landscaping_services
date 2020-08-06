@@ -13,7 +13,10 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(5),
     },
     submit: {
-      margin: theme.spacing(3, 0, 2),
+	  margin: theme.spacing(3, 0, 2),
+	  '&:hover': {
+		backgroundColor: ' #00c853',
+	}
     },
   }));
 
@@ -31,6 +34,7 @@ const Contact = () => {
   // console.log('firsName', firstName)
 
   const submitInfo = () => {
+
     axios.post('/api/email', {firstName, lastName, phoneNumber, userEmail, message }).then(() => {
         // console.log(firstName, lastName, phoneNumber, userEmail, message)
         resetInfo()
@@ -42,8 +46,9 @@ const Contact = () => {
         showConfirmButton: false,
         timer: 1500
       })
-    }).catch(err => console.log(err))
+	}).catch(err => console.log(err))
   }
+
 
   const resetInfo = () => {
     setFirstName('')
