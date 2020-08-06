@@ -11,9 +11,22 @@ const useStyles = makeStyles((theme) => ({
     // maxWidth: 400
   },
   card: {
-    padding: theme.spacing(1),
     color: theme.palette.text.secondary,
-    maxWidth: 335
+  },
+  grid: {
+    marginTop: '2em',
+    padding: '1.5em'
+  },
+  list: {
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: '2em'
+    },
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: '5em'
+    }
+  },
+  info: {
+    paddingTop: '3em'
   }
 }));
 
@@ -35,7 +48,7 @@ const Project = (props) => {
     const { img, name } = project
     return (
       <section className='project-cont'>
-                <Grid container xs={12}>
+                <Grid container xs={12} className={classes.grid}>
                 	<Grid item xs={12} sm={6}>
                 		<CardMedia
                 		        className={classes.card}
@@ -46,7 +59,9 @@ const Project = (props) => {
                 		/>
                 	</Grid>
                 	 <Grid item xs={12} sm={6}>
-                     <List component="nav" aria-label="main mailbox folders">
+                     <List component="nav" 
+                     className={classes.list}
+                     >
                      	    <ListItem>
                      	        <ListItemIcon>
                      	            <CheckIcon />
@@ -61,7 +76,7 @@ const Project = (props) => {
                      	    </ListItem>
                      	  </List>
                    </Grid>
-                	<Grid item xs={12}>
+                	<Grid item xs={12} className={classes.info}>
                     <Typography>Labore deserunt aliquip ad magna sint minim anim ex non cillum pariatur aute ea ipsum. Mollit esse magna Lorem labore reprehenderit labore eiusmod tempor. Minim esse anim sit excepteur commodo aute consectetur ea ad laborum. Ad tempor ipsum magna commodo et aliqua eiusmod sint veniam elit. Velit non et exercitation laboris adipisicing consequat irure ullamco labore veniam est dolore occaecat.</Typography>
                   </Grid>
                 </Grid>
