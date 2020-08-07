@@ -15,12 +15,6 @@ const theme = createMuiTheme({
       contrastText: '#000',
     },
   }
-  // typography: {
-  //   fontFamily: [
-  //     'Montserrat Alternates',
-  //     'sans-serif'
-  //   ].join(',')
-  // }
 });
 
 export default theme

@@ -1,11 +1,11 @@
 import React, { useState, useRef } from "react";
 import { useIntersection } from "react-use";
 import gsap from "gsap";
-import Display from '../Display/Display'
-import Intro from '../intro/Intro'
-import Carousel from '../Carousel/SiteCarousel'
-import Data from '../../data'
-import Contact from '../Contact/Contact'
+import Display from '../Display/Display';
+import Intro from '../intro/Intro';
+import Carousel from '../Carousel/SiteCarousel';
+import Data from '../../data';
+import Contact from '../Contact/Contact';
 import './Home.css'
 
 const Home = () => {

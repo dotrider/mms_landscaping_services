@@ -1,8 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { makeStyles, CardMedia, ListItem, List, Typography, ListItemText, ListItemIcon, Grid } from '@material-ui/core';
-import CheckRoundedIcon from '@material-ui/icons/CheckRounded'
-import data from '../../data'
-import './Project.css'
+import React, { useEffect, useState } from 'react';
+import data from '../../data';
+import CheckRoundedIcon from '@material-ui/icons/CheckRounded';
+import KeyboardBackspaceRoundedIcon from '@material-ui/icons/KeyboardBackspaceRounded';
+import { 
+  makeStyles, 
+  CardMedia, 
+  ListItem, 
+  List, 
+  Typography, 
+  ListItemText, 
+  ListItemIcon, 
+  Grid, 
+  IconButton 
+} from '@material-ui/core';
+import './Project.css';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,12 +38,17 @@ const useStyles = makeStyles((theme) => ({
   },
   info: {
     paddingTop: '3em'
+  },
+  backBtn: {
+    margin: '2em auto'
   }
 }));
 
 
 
 const Project = (props) => {
+
+
 
     const classes = useStyles();
 
@@ -64,13 +80,13 @@ const Project = (props) => {
                      >
                      	    <ListItem>
                      	        <ListItemIcon>
-                     	            <CheckRoundedIcon color="primary" fontSize='large' />
+                     	            <CheckRoundedIcon color="primary" fontSize='medium' />
                      	        </ListItemIcon>
                      	        <ListItemText primary="Ex 1" />
                      	    </ListItem>
                      	    <ListItem>
                      	        <ListItemIcon>
-                     	            <CheckRoundedIcon color="primary" fontSize='large'/>
+                     	            <CheckRoundedIcon color="primary" fontSize='medium'/>
                      	        </ListItemIcon>
                      	        <ListItemText primary="Ex 2" />
                      	    </ListItem>
@@ -79,6 +95,11 @@ const Project = (props) => {
                 	<Grid item xs={12} className={classes.info}>
                     <Typography>Labore deserunt aliquip ad magna sint minim anim ex non cillum pariatur aute ea ipsum. Mollit esse magna Lorem labore reprehenderit labore eiusmod tempor. Minim esse anim sit excepteur commodo aute consectetur ea ad laborum. Ad tempor ipsum magna commodo et aliqua eiusmod sint veniam elit. Velit non et exercitation laboris adipisicing consequat irure ullamco labore veniam est dolore occaecat.</Typography>
                   </Grid>
+                  {/* <Grid item xs={12} className={classes.backBtn}> */}
+                      <IconButton onClick={props.history.goBack} className={classes.backBtn}>
+                          <KeyboardBackspaceRoundedIcon edge='end' />
+                      </IconButton>
+                  {/* </Grid> */}
                 </Grid>
       </section>
         );

@@ -1,8 +1,15 @@
 import React from "react";
-import { makeStyles, CardMedia, CardActionArea, Grid, Typography} from '@material-ui/core';
-import './Display.css'
-import cx from 'classnames'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import cx from 'classnames';
+import { makeStyles, 
+  CardMedia, 
+  CardActionArea, 
+  Grid, 
+  Typography
+} from '@material-ui/core';
+import './Display.css';
+
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -20,6 +27,13 @@ const useStyles = makeStyles((theme) => ({
       overflow: 'hidden',
       margin: '3.5em auto',
       maxWidth: 1390
+    },
+    actionArea: {
+      "&:hover $focusHighlight": {
+        opacity: 1,
+      }
+    },
+    focusHighlight: {
     }
 
   }));
@@ -31,7 +45,6 @@ const Display = ({data, sectionRef}) => {
   const classes = useStyles();
 
 
-
     
     return (
       <section ref={sectionRef} >
@@ -40,7 +53,12 @@ const Display = ({data, sectionRef}) => {
                     {data.map(({img, name, id}) => (
                         <Grid className={cx(classes.card,'fadeIn')} item xs={12} sm={6}>
                             <Link to={`/project/${id}`}>
-                            	<CardActionArea className={classes.activeCard}>
+                            	<CardActionArea className={classes.activeCard}
+                                classes={{
+                                root: classes.actionArea,
+                                focusHighlight: classes.focusHighlight
+                              }}
+                              >
                             	    <CardMedia 
                             	      component="img"
                             	      alt={name}

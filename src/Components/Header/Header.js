@@ -1,22 +1,35 @@
 import React, { useState } from 'react'
-import { makeStyles, AppBar, Toolbar, Typography, IconButton, ListItemText, ListItemIcon, ListItem, List, Drawer, useTheme  } from '@material-ui/core';
 import { Link } from 'react-router-dom'
 import MenuIcon from '@material-ui/icons/Menu';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import clsx from 'clsx';
-import './Header.css'
+import { 
+  makeStyles,
+  AppBar, 
+  Toolbar, 
+  Typography, 
+  IconButton, 
+  ListItemText, 
+  ListItemIcon, 
+  ListItem, 
+  List, 
+  Drawer
+} from '@material-ui/core';
+import './Header.css';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
-  // menuButton: {
-  //   marginRight: 'auto',
-  // },
+
   title: {
     flexGrow: 1,
   },
+
   sectionDesktop: {
     display: 'none',
     [theme.breakpoints.up('md')]: {
@@ -25,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
       width: '175px'
     },
   },
+
   sectionMobile: {
     display: 'flex',
     [theme.breakpoints.up('md')]: {
@@ -39,10 +53,16 @@ const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
   },
+
   fullList: {
     width: 'auto',
-  }
+  },
 
+  
+   drawerPaper: {
+        marginTop: theme.mixins.toolbar.minHeight,
+        zIndex: theme.zIndex.appBar
+      }
 }));
 
 
@@ -70,9 +90,11 @@ const Header = () => {
     ///handles styles ex. Drawer width and renders mobile menu text/icons
     const list = (anchor) => (
       <div
-        className={clsx(classes.list, {
-          [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-        })}
+        className={clsx(classes.list
+        //   , {
+        //   [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+        // }
+        )}
         role="presentation"
         onClick={toggleDrawer(anchor, false)}
         onKeyDown={toggleDrawer(anchor, false)}
@@ -91,15 +113,17 @@ const Header = () => {
     return (
         <header className={classes.root} >
           <AppBar color='primary'
-                  position="relative"
-                  className={classes.backdrop}        
+                  position="static"
+                   
           >
               <Toolbar>
-                    <Link to='/' className='links'>
-                      <Typography variant="h6">
-                        MMS Landscaping
-                      </Typography>
-                    </Link>
+                    <IconButton>
+                      <Link to='/' className='links'>
+                        <Typography variant="h6">
+                          MMS Landscaping
+                        </Typography>
+                      </Link>
+                    </IconButton>
                     <nav className={classes.baseMenu}>
                         <div className={classes.sectionMobile}>
                             <IconButton edge="end"
@@ -123,7 +147,11 @@ const Header = () => {
           </AppBar>
           <Drawer 
               varient='persistent'
-              anchor={'right'} open={mobileMenu['right']} onClose={toggleDrawer('right', false)}
+              anchor={'right'} open={mobileMenu['right']} 
+              onClose={toggleDrawer('right', false)}
+              classes={{
+                paper: classes.drawerPaper
+              }}
           >
                 {list('right')}
           </Drawer>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Typography } from '@material-ui/core'
 import './Intro.css'
 
-const Presentation = () => {
+const Intro = () => {
     return (
         <section className='intro-container'>
 
@@ -17,4 +17,4 @@ const Presentation = () => {
     )
 }
 
-export default Presentation
+export default Intro
