@@ -17,34 +17,32 @@ const Home = () => {
 
     const intersection = useIntersection(sectionRef, {
       root: null,
-      rootMargin: '0px',
-      threshold: 0.1
+      rootMargin: '400px',
+      threshold: 0.2
     })
   
   
-    const fadeIn = (classname) => {
+    const slideIn = (classname) => {
         gsap.to(classname, 1, {
-          opacity: 1,
-          y: -20,
-          ease: 'back'
+          opacity: 1, 
+          y: -10,
+          duration:1
         })
     }
   
   
-    const fadeOut = (classname) => {
+    const slideOut = (classname) => {
       gsap.to(classname, 1, {
-        opacity: 0,
-        y: -20,
-        ease: 'back',
-        stagger: {
-          amount: .3
-        }
+        opacity: 1,
+        y: 100,
+        ease: 'back'
       })
     }
   
-    intersection && intersection.intersectionRatio < 0.1?
-      fadeOut('.fadeIn')
-    : fadeIn('.fadeIn')
+    intersection && intersection.intersectionRatio < 0.2?
+      slideOut('.slideIn')
+      : 
+      slideIn('.slideIn')
   
     
     return (
