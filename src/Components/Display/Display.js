@@ -48,7 +48,6 @@ const Display = ({data, sectionRef}) => {
     
     return (
       <section ref={sectionRef}>
-              <div className='inner'>
                 <Typography variant='h5' className='slideIn'>Our Services</Typography>
                   <Grid className={cx(classes.gridCont, 'slideIn')} container xs={12} >
                       {data.map(({img, name, id}) => (
@@ -72,7 +71,6 @@ const Display = ({data, sectionRef}) => {
                           </Grid>
                       ))}
                   </Grid>   
-              </div>
     </section>      
     )
 }

@@ -117,7 +117,7 @@ const Header = () => {
                    
           >
               <Toolbar>
-                    <IconButton>
+                    <IconButton style={{padding:'0', borderRadius: '25%'}}>
                       <Link to='/' className='links'>
                         <Typography variant="h6">
                           MMS Landscaping

@@ -13,20 +13,23 @@ const Home = () => {
     console.log('home', data)
 
     //scroll effect
+    //https://streamich.github.io/react-use/?path=/story/sensors-useintersection--docs
+
     const sectionRef = useRef(null);
 
+    //tracks the changes in the intersection of a target element
     const intersection = useIntersection(sectionRef, {
       root: null,
       rootMargin: '400px',
       threshold: 0.2
     })
   
-  
+  //setting class with gsap animation
     const slideIn = (classname) => {
         gsap.to(classname, 1, {
           opacity: 1, 
           y: -5,
-          duration:2.5,
+          duration:1,
           ease: 'power4.out'
         })
     }
@@ -34,12 +37,13 @@ const Home = () => {
   
     const slideOut = (classname) => {
       gsap.to(classname, 1, {
-        opacity: 1,
+        opacity: 0,
         y: 100,
         ease: 'back'
       })
     }
   
+    //Marks when viewport is visible to user
     intersection && intersection.intersectionRatio < 0.2?
       slideOut('.slideIn')
       : 
