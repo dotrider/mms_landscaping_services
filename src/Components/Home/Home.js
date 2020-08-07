@@ -25,8 +25,9 @@ const Home = () => {
     const slideIn = (classname) => {
         gsap.to(classname, 1, {
           opacity: 1, 
-          y: -10,
-          duration:1
+          y: -5,
+          duration:2.5,
+          ease: 'power4.out'
         })
     }
   
