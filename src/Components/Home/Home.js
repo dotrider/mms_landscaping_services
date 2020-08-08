@@ -9,8 +9,8 @@ import Contact from '../Contact/Contact';
 import './Home.css'
 
 const Home = () => {
-    const [ data, setData ] = useState(Data)
-    console.log('home', data)
+    const [ data ] = useState(Data)
+    // console.log('home', data)
 
     //scroll effect
     //https://streamich.github.io/react-use/?path=/story/sensors-useintersection--docs

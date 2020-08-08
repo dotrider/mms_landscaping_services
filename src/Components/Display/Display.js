@@ -5,9 +5,11 @@ import { makeStyles,
   CardMedia, 
   CardActionArea, 
   Grid, 
-  Typography
+  Typography,
+  Card
 } from '@material-ui/core';
 import './Display.css';
+import { MDBMask, MDBView} from "mdbreact";
 
 
 
@@ -15,10 +17,11 @@ const useStyles = makeStyles((theme) => ({
 
     card: {
       maxWidth: 335,
-      margin: '1em .75em',
+      margin: '1em .75em'
     },
     activeCard: {
-      textAlign: 'center'
+      textAlign: 'center',
+      color: 'black'
     },
     gridCont: {
       display: 'flex',
@@ -34,7 +37,11 @@ const useStyles = makeStyles((theme) => ({
       }
     },
     focusHighlight: {
-    }
+    },
+    overlayText: {
+      color: 'white',
+      // backgroundColor: 'white'
+   }
 
   }));
 
@@ -49,26 +56,34 @@ const Display = ({data, sectionRef}) => {
     return (
       <section ref={sectionRef}>
                 <Typography variant='h5' className='slideIn'>Our Services</Typography>
-                  <Grid className={cx(classes.gridCont, 'slideIn')} container xs={12} >
+                  <Grid className={cx(classes.gridCont, 'slideIn')} container>
                       {data.map(({img, name, id}) => (
-                          <Grid className={cx(classes.card)} item xs={12} sm={6}>
-                              <Link to={`/project/${id}`}>
-                              	<CardActionArea className={classes.activeCard}
-                                  classes={{
-                                  root: classes.actionArea,
-                                  focusHighlight: classes.focusHighlight
-                                }}
-                                >
-                              	    <CardMedia 
-                              	      component="img"
-                              	      alt={name}
-                              	      height="240"
-                              	      image={img}
-                              	      // title="Contemplative Reptile"
-                              	    />
-                              	</CardActionArea>
-                              </Link>
-                          </Grid>
+                        <Card key={id} className={cx(classes.card)} xs={12} sm={6}>
+                              	<Link to={`/project/${id}`}>
+                                    <MDBView hover zoom>
+                                        <CardActionArea className={classes.activeCard}
+                                          classes={{
+                                            root: classes.actionArea,
+                                            // focusHighlight: classes.focusHighlight
+                                          }}
+                                        >
+                                            <CardMedia 
+                                              component="img"
+                                              alt={name}
+                                              height="240"
+                                              image={img}
+                                              title="Contemplative Reptile"
+                                            />
+                                                       
+                                        </CardActionArea>
+                                            <MDBMask className="flex-center" overlay="black-strong">
+                                                <Typography className={classes.overlayText}>
+                                                            {name}
+                                                </Typography>  
+                                            </MDBMask>
+                                      </MDBView>
+                              	</Link>
+                        </Card>
                       ))}
                   </Grid>   
     </section>      

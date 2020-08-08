@@ -58,7 +58,7 @@ const Project = (props) => {
     useEffect(() => {
        const project = data.find(curr => curr.id === +props.match.params.id)
           setProject(project)
-    },[])
+    },[props.match.params.id])
 
 
     const { img, name } = project

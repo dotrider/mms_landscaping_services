@@ -7,11 +7,14 @@ const SiteCarousel = ({data}) => {
 
         return (
             <Grid>
-                 <Carousel>
+                 <Carousel 
+                    interval={3500}
+                 >
                     {
-                        data.map( ({img, description, name}, i) => <CardMedia 
-                            className='card-media' key={i}  
-                            component="image"
+                        data.map(({img, description, name, id}, i) => <CardMedia 
+                            key={id}
+                            className='card-media' 
+                            component="img"
                             alt={name}
                             height="350"
                             image={img}
@@ -23,7 +26,7 @@ const SiteCarousel = ({data}) => {
                         {/* <Button className="CheckButton">
                             HELLLLOOO!
                         </Button> */}
-                    </CardMedia>
+                        </CardMedia>
                     )}
                 </Carousel>
             </Grid>
