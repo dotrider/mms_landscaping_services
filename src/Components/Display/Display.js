@@ -67,7 +67,7 @@ const Display = ({data, sectionRef}) => {
                                             // focusHighlight: classes.focusHighlight
                                           }}
                                         >
-                                            <CardMedia 
+                                            <CardMedia                                  
                                               component="img"
                                               alt={name}
                                               height="240"

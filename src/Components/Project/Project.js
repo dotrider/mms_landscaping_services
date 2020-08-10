@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Project = (props) => {
 
-
+console.log(props)
 
     const classes = useStyles();
 
@@ -56,16 +56,19 @@ const Project = (props) => {
 
 
     useEffect(() => {
+      //window obj Reders top of the page
+        window.scrollTo(0, 0)
        const project = data.find(curr => curr.id === +props.match.params.id)
           setProject(project)
     },[props.match.params.id])
 
+ 
 
     const { img, name } = project
     return (
       <section className='project-cont'>
                 <Grid container xs={12} className={classes.grid}>
-                	<Grid item xs={12} sm={6}>
+                	<Grid item xs={12} sm={6} className='animated fadeInLeft'>
                 		<CardMedia
                 		        className={classes.card}
                 		        component="img"
@@ -74,7 +77,7 @@ const Project = (props) => {
                 		        image={img}
                 		/>
                 	</Grid>
-                	 <Grid item xs={12} sm={6}>
+                	 <Grid item xs={12} sm={6} className='animated fadeInRight'>
                      <List component="nav" 
                      className={classes.list}
                      >
