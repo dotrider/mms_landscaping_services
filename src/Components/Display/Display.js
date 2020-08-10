@@ -6,7 +6,8 @@ import { makeStyles,
   CardActionArea, 
   Grid, 
   Typography,
-  Card
+  Card,
+  Box
 } from '@material-ui/core';
 import './Display.css';
 import { MDBMask, MDBView} from "mdbreact";
@@ -16,8 +17,9 @@ import { MDBMask, MDBView} from "mdbreact";
 const useStyles = makeStyles((theme) => ({
 
     card: {
-      maxWidth: 335,
-      margin: '1em .85em'
+      minWidth: 335,
+      // minHeight:235,
+      margin: '1em .75em'
     },
     activeCard: {
       textAlign: 'center',
@@ -29,7 +31,8 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'space-evenly',
       overflow: 'hidden',
       margin: '3.5em auto',
-      maxWidth: 1390
+      // maxWidth: 1390
+      maxWidth: 1640
     },
     actionArea: {
       "&:hover $focusHighlight": {
@@ -58,7 +61,7 @@ const Display = ({data, sectionRef}) => {
                 <Typography variant='h5' className='slideIn'>Our Services</Typography>
                   <Grid className={cx(classes.gridCont, 'slideIn')} container>
                       {data.map(({img, name, id}) => (
-                        <Card key={id} className={cx(classes.card)} xs={12} sm={6}>
+                        <Grid key={id} className={cx(classes.card)} xs={12} sm={3} item>
                               	<Link to={`/project/${id}`}>
                                     <MDBView hover zoom>
                                         <CardActionArea className={classes.activeCard}
@@ -70,7 +73,7 @@ const Display = ({data, sectionRef}) => {
                                             <CardMedia                                  
                                               component="img"
                                               alt={name}
-                                              height="240"
+                                              height="260"
                                               image={img}
                                               title="Contemplative Reptile"
                                             />
@@ -83,7 +86,7 @@ const Display = ({data, sectionRef}) => {
                                             </MDBMask>
                                       </MDBView>
                               	</Link>
-                        </Card>
+                        </Grid>
                       ))}
                   </Grid>   
     </section>      

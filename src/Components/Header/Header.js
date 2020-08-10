@@ -57,12 +57,11 @@ const useStyles = makeStyles((theme) => ({
   fullList: {
     width: 'auto',
   },
-
   
-   drawerPaper: {
-        marginTop: theme.mixins.toolbar.minHeight,
-        zIndex: theme.zIndex.appBar
-      }
+  //  drawerPaper: {
+  //       marginTop: theme.mixins.toolbar.minHeight,
+  //       zIndex: theme.zIndex.appBar
+  //     }
 }));
 
 
