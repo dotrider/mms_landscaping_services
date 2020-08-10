@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 
     card: {
       maxWidth: 335,
-      margin: '1em .75em'
+      margin: '1em .85em'
     },
     activeCard: {
       textAlign: 'center',
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     gridCont: {
       display: 'flex',
       justifyContent: 'space-evenly',
-      alignItems: 'space-between',
+      alignItems: 'space-evenly',
       overflow: 'hidden',
       margin: '3.5em auto',
       maxWidth: 1390

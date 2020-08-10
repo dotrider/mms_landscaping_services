@@ -30,7 +30,7 @@ const Home = () => {
           opacity: 1, 
           y: -5,
           duration:1,
-          ease: 'power4.out'
+          ease: 'slow.out'
         })
     }
   
@@ -39,7 +39,7 @@ const Home = () => {
       gsap.to(classname, 1, {
         opacity: 0,
         y: 100,
-        ease: 'back'
+        ease: 'slow.out'
       })
     }
   

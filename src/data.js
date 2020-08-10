@@ -4,7 +4,9 @@ const data = [
         id: 1,
         name: 'Maintenance',
         img: "https://images.unsplash.com/photo-1526392587392-d1627b6c134a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-        description: 'Dolore cupidatat ex labore incididunt culpa ullamco est sint commodo cillum nostrud culpa incididunt. Minim ex cillum culpa Lorem. Labore sunt exercitation velit fugiat nulla laborum labore est laborum est eiusmod et tempor. Velit magna incididunt eiusmod consequat ullamco.'
+        description: 'Dolore cupidatat ex labore incididunt culpa ullamco est sint commodo cillum nostrud culpa incididunt. Minim ex cillum culpa Lorem. Labore sunt exercitation velit fugiat nulla laborum labore est laborum est eiusmod et tempor. Velit magna incididunt eiusmod consequat ullamco.',
+        
+        
     }, {
         id: 2,
         name: 'Tree Trimming',

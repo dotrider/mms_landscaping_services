@@ -8,7 +8,7 @@ const SiteCarousel = ({data}) => {
         return (
             <Grid>
                  <Carousel 
-                    interval={3000}
+                    interval={2000}
                  >
                     {
                         data.map(({img, description, name, id}, i) => <CardMedia 

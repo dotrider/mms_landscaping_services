@@ -114,6 +114,7 @@ const Header = () => {
         <header className={classes.root} >
           <AppBar color='primary'
                   position="static"
+                  // style={{boxShadow: 'none'}}
                    
           >
               <Toolbar>

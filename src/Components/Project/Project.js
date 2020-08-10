@@ -11,7 +11,8 @@ import {
   ListItemText, 
   ListItemIcon, 
   Grid, 
-  IconButton 
+  IconButton ,
+  Card
 } from '@material-ui/core';
 import './Project.css';
 
@@ -68,7 +69,7 @@ console.log(props)
     return (
       <section className='project-cont'>
                 <Grid container xs={12} className={classes.grid}>
-                	<Grid item xs={12} sm={6} className='animated fadeInLeft'>
+                	<Grid xs={12} sm={6} item className='animated fadeInLeft'>
                 		<CardMedia
                 		        className={classes.card}
                 		        component="img"
