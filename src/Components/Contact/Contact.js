@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     submit: {
 	  margin: theme.spacing(3, 0, 2),
 	  '&:hover': {
-		backgroundColor: '#00c853',
+		backgroundColor: '#B3E271',
 	}
     },
   }));
@@ -144,7 +144,7 @@ const Contact = () => {
         	          type="submit"
         	          fullWidth
         	          variant="contained"
-        	          color="primary"
+        	          color="secondary"
         	          className={classes.submit}
         	        >
         	          Send

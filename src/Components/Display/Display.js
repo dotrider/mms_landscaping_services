@@ -91,7 +91,7 @@ const Display = ({data, sectionRef}) => {
                                                   image={img}
                                                   title="Contemplative Reptile"
                                                 />
-                                                  <MDBMask  overlay='black-light'>
+                                                  <MDBMask overlay='black-light'>
                                                       <Typography variant='h5' className={classes.serviceText}>
                                                                   {name}
                                                       </Typography> 

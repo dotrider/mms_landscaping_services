@@ -32,6 +32,7 @@ const SiteCarousel = ({data}) => {
                             <MDBMask overlay='black-light'>
                             </MDBMask>
                         </MDBView>
+                       
                     )}
                 </Carousel>
             </Grid>

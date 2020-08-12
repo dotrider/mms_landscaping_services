@@ -84,13 +84,13 @@ console.log(props)
                      >
                      	    <ListItem>
                      	        <ListItemIcon>
-                     	            <CheckRoundedIcon color="primary" fontSize='medium' />
+                     	            <CheckRoundedIcon color="secondary" fontSize='medium' />
                      	        </ListItemIcon>
                      	        <ListItemText primary="Ex 1" />
                      	    </ListItem>
                      	    <ListItem>
                      	        <ListItemIcon>
-                     	            <CheckRoundedIcon color="primary" fontSize='medium'/>
+                     	            <CheckRoundedIcon color="secondary" fontSize='medium'/>
                      	        </ListItemIcon>
                      	        <ListItemText primary="Ex 2" />
                      	    </ListItem>
@@ -100,7 +100,9 @@ console.log(props)
                     <Typography>Labore deserunt aliquip ad magna sint minim anim ex non cillum pariatur aute ea ipsum. Mollit esse magna Lorem labore reprehenderit labore eiusmod tempor. Minim esse anim sit excepteur commodo aute consectetur ea ad laborum. Ad tempor ipsum magna commodo et aliqua eiusmod sint veniam elit. Velit non et exercitation laboris adipisicing consequat irure ullamco labore veniam est dolore occaecat.</Typography>
                   </Grid>
                   {/* <Grid item xs={12} className={classes.backBtn}> */}
-                      <IconButton onClick={props.history.goBack} className={classes.backBtn}>
+                      <IconButton onClick={props.history.goBack} 
+                      color="secondary"
+                      className={classes.backBtn}>
                           <KeyboardBackspaceRoundedIcon edge='end' />
                       </IconButton>
                   {/* </Grid> */}
