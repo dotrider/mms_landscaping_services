@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import axios from 'axios';
 import Swal from 'sweetalert2'
 import { makeStyles } from '@material-ui/core/styles';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { 
 	Container, 
 	Grid, 
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(5),
     },
     submit: {
-	  margin: theme.spacing(3, 0, 2),
+	  margin: theme.spacing(3, 0, 3),
 	  '&:hover': {
 		backgroundColor: '#B3E271',
 	}
@@ -29,8 +30,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Contact = () => {
 
-    const classes = useStyles();
-
     const [ firstName, setFirstName ] = useState(''),
           [ lastName, setLastName ] = useState(''),
           [ phoneNumber, setPhoneNumber ] = useState(''),
@@ -39,7 +38,18 @@ const Contact = () => {
 
   // console.log('firsName', firstName)
 
-  const submitInfo = () => {
+  	const classes = useStyles();
+  	const recaptchaRef = useRef();
+
+
+
+
+
+
+  const submitInfo = async () => {
+
+	const token = await recaptchaRef.current.executeAsync();
+	console.log(token, 'token')
 
     axios.post('/api/email', {firstName, lastName, phoneNumber, userEmail, message }).then(() => {
         // console.log(firstName, lastName, phoneNumber, userEmail, message)
@@ -149,6 +159,14 @@ const Contact = () => {
         	        >
         	          Send
         	        </Button>
+
+					<ReCAPTCHA
+					  ref={recaptchaRef}
+					  size='invisible'
+					  sitekey={process.env.REACT_APP_RECAPT_KEY}
+					  badge='inline'
+					  style={{ display: "inline-block" }}
+					/>				
         	    </form> 
               </Container>
         </section>
