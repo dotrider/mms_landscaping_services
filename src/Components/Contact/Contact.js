@@ -50,8 +50,10 @@ const Contact = () => {
 
 	const token = await recaptchaRef.current.executeAsync();
 	console.log(token, 'token')
+	//after submitting, reCAPTCHA veryfies user again
+	recaptchaRef.current.reset();
 
-    axios.post('/api/email', {firstName, lastName, phoneNumber, userEmail, message }).then(() => {
+    axios.post('/api/email', {firstName, lastName, phoneNumber, userEmail, message, token }).then(() => {
         // console.log(firstName, lastName, phoneNumber, userEmail, message)
         resetInfo()
 

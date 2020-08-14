@@ -1,13 +1,30 @@
+const axios = require('axios');
+
 const nodemailer = require('nodemailer'),
-    { EMAIL, PASSWORD } = process.env;
+    { EMAIL, PASSWORD, RECOM_KEY } = process.env;
+
 
 
 module.exports = {
     contact: async(req, res) => {
 
-        const { firstName, lastName, phoneNumber, userEmail, message } = req.body;
+        const { firstName, lastName, phoneNumber, userEmail, message, token } = req.body;
         // console.log('name', name, 'userEmail', userEmail, 'message', message)
+        console.log(token, 'tokkkken')
+        
+        //checks token for validation with google
+        if(!token) return res.status(400).json({err: 'No Token'})
+        const googleVerify = `https://www.google.com/recaptcha/api/siteverify?secret=${RECOM_KEY}&response=${token}`
 
+        const googleResponse = await axios.post(googleVerify)
+        
+        const { success } = googleResponse.data
+        // console.log(success, 'google response')
+        
+        if(!success) return res.sendStatus(500)
+        
+
+        //Run mailer after validation
         const messageContent = ` name: ${firstName} ${lastName} \n Phone Number: ${phoneNumber} \n email: ${userEmail} \n message: ${message} `;
             // console.log('messageContent', messageContent)
 
