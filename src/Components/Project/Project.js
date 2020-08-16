@@ -26,8 +26,8 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   grid: {
-    marginTop: '2em',
-    padding: '1.5em'
+    marginTop: '4em',
+    padding: '.25em'
   },
   list: {
     [theme.breakpoints.down('xs')]: {
@@ -103,7 +103,7 @@ console.log(props)
                       <IconButton onClick={props.history.goBack} 
                       color="secondary"
                       className={classes.backBtn}>
-                          <KeyboardBackspaceRoundedIcon edge='end' />
+                          <KeyboardBackspaceRoundedIcon edge='end' fontSize='large' />
                       </IconButton>
                   {/* </Grid> */}
                 </Grid>

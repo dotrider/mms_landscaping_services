@@ -10,7 +10,7 @@ module.exports = {
 
         const { firstName, lastName, phoneNumber, userEmail, message, token } = req.body;
         // console.log('name', name, 'userEmail', userEmail, 'message', message)
-        console.log(token, 'tokkkken')
+        // console.log(token, 'tokkkken')
         
         //checks token for validation with google
         if(!token) return res.status(400).json({err: 'No Token'})
@@ -18,7 +18,7 @@ module.exports = {
 
         const googleResponse = await axios.post(googleVerify)
         
-        const { success } = googleResponse.data
+        const { success } = await googleResponse.data
         // console.log(success, 'google response')
         
         if(!success) return res.sendStatus(500)

@@ -49,7 +49,7 @@ const Contact = () => {
   const submitInfo = async () => {
 
 	const token = await recaptchaRef.current.executeAsync();
-	console.log(token, 'token')
+	// console.log(token, 'token')
 	//after submitting, reCAPTCHA veryfies user again
 	recaptchaRef.current.reset();
 
@@ -79,7 +79,7 @@ const Contact = () => {
     return (
         <section style={{marginBottom: '5em'}}>
         	<Container component="main" maxWidth="sm" style={{padding: '.85em'}}>
-        	  <Typography variant="h5">Request Your Free Estimate</Typography>
+        	  <Typography variant="h2">Request Your Free Estimate</Typography>
         	    <Typography>Contact us now with your questions or to request a Free quote.</Typography>
         
         	    <form className={classes.form} 

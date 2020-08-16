@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
     card: {
       minWidth: 340,
-      margin: '1em .65em'
+      margin: '1em .68em'
     },
 
     activeCard: {
@@ -71,7 +71,7 @@ const Display = ({data, sectionRef}) => {
  
     return (
         <section ref={sectionRef} >
-            <Typography variant='h5' className='slideIn'>Our Services</Typography>
+            <Typography variant='h2' className='slideIn'>Our Services</Typography>
                 <Grid className={cx(classes.gridCont, 'slideIn')} container >
                     {data.map(({img, name, id}) => (
                       <Grid key={id} className={cx(classes.card)} xs={12} sm={3} item>
@@ -92,7 +92,7 @@ const Display = ({data, sectionRef}) => {
                                                   title="Contemplative Reptile"
                                                 />
                                                   <MDBMask overlay='black-light'>
-                                                      <Typography variant='h5' className={classes.serviceText}>
+                                                      <Typography variant='h3' className={classes.serviceText}>
                                                                   {name}
                                                       </Typography> 
                                                       <Typography variant='subtitle1' className={cx(classes.infoText, 'animated fadeInRight')}>

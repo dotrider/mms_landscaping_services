@@ -1,6 +1,7 @@
-/* .project-cont {
-
-} */
+.project-cont {
+    width: 95%;
+    margin: 0 auto;
+}
 
 @media (max-width: 770px ){
     .grid-list {

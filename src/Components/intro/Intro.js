@@ -6,7 +6,7 @@ const Intro = () => {
     return (
         <section className='intro-container'>
 
-            <Typography variant="h5">MMS Landscaping</Typography>
+            <Typography variant="h2">MMS Landscaping</Typography>
             <Typography>
                 Irure duis tempor quis proident deserunt adipisicing anim elit magna culpa Lorem voluptate est. 
                 Occaecat pariatur dolore excepteur et. Aliqua veniam aliquip est consectetur nulla nulla. 
