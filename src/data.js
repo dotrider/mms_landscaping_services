@@ -10,7 +10,7 @@ const data = [
     }, {
         id: 2,
         name: 'Tree Trimming',
-        img: "https://images.unsplash.com/photo-1532302780319-95689ab9d79a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+        img: "https://images.unsplash.com/photo-1496113517021-6a8cf280c2b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
         description: 'Dolore cupidatat ex labore incididunt culpa ullamco est sint commodo cillum nostrud culpa incididunt. Minim ex cillum culpa Lorem. Labore sunt exercitation velit fugiat nulla laborum labore est laborum est eiusmod et tempor. Velit magna incididunt eiusmod consequat ullamco.'
     }, {
         id: 3,
@@ -30,7 +30,7 @@ const data = [
     }, {
         id: 6,
         name: 'Gravel & Rock',
-        img: "https://images.unsplash.com/photo-1565210608687-e4f3397edbfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80",
+        img: "https://images.unsplash.com/photo-1487044637087-33d7b23db33f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
         description: 'Dolore cupidatat ex labore incididunt culpa ullamco est sint commodo cillum nostrud culpa incididunt. Minim ex cillum culpa Lorem. Labore sunt exercitation velit fugiat nulla laborum labore est laborum est eiusmod et tempor. Velit magna incididunt eiusmod consequat ullamco.'
     }
 ]
