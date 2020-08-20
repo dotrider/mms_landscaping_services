@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   info: {
-    paddingTop: '3em'
+    padding: '3em 1em'
   },
   backBtn: {
     margin: '2em auto'
@@ -64,7 +64,7 @@ const Project = (props) => {
 
  
 
-    const { img, name, details } = project
+    const { img, name, details, description } = project
 
     return (
       <section className='project-cont'>
@@ -97,7 +97,7 @@ const Project = (props) => {
                                             <ListItemIcon>
                                                 <CheckRoundedIcon color="secondary" fontSize='large'/>
                                             </ListItemIcon>
-                                            <ListItemText primary={detail} color='textSecondary'/>
+                                            <ListItemText primary={detail} variant='h3'/>
                                         </ListItem>)
                                     : null
                                   }
@@ -105,11 +105,8 @@ const Project = (props) => {
                       {/* </Fade> */}
                         </Grid>
                 	<Grid item xs={12} className={classes.info}>
-                      <Typography color='textSecondary'>
-                          Labore deserunt aliquip ad magna sint minim anim ex non cillum pariatur aute ea ipsum. 
-                          Mollit esse magna Lorem labore reprehenderit labore eiusmod tempor. Minim esse anim sit excepteur commodo aute consectetur ea ad laborum. 
-                          Ad tempor ipsum magna commodo et aliqua eiusmod sint veniam elit. 
-                          Velit non et exercitation laboris adipisicing consequat irure ullamco labore veniam est dolore occaecat.
+                      <Typography variant='h3'>
+                          {description}
                       </Typography>
                   </Grid>
                       <IconButton onClick={props.history.goBack} 

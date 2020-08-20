@@ -136,11 +136,15 @@ const Header = () => {
                             </IconButton>
                         </div>
                         <div className={classes.sectionDesktop}>
+           
                             <Typography variant="h3"  className={classes.title} >
-                                About
+                              	Services
                             </Typography>
                             <Typography variant="h3"  className={classes.title} >
-                              Services
+                                Contact Us
+                            </Typography>
+                            <Typography variant="h3"  className={classes.title} >
+                                About
                             </Typography>
                         </div>
                     </nav>

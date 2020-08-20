@@ -6,6 +6,9 @@
 
 .inner-intro-container {
     margin: 3.5rem 0 0;
+    padding: 1rem;
+    border-left: .10em solid #638B1D;
+    border-right: .10em solid #638B1D;
 }
 
 @media (min-width: 770px ){
