@@ -11,20 +11,22 @@ import {
 	Typography 
 } from '@material-ui/core';
 import './Contact.css'
+import Fade from 'react-reveal/Fade';
 
 
 
 const useStyles = makeStyles((theme) => ({
     form: {
       width: '100%',
-      marginTop: theme.spacing(5),
+	  marginTop: theme.spacing(5),
+	
     },
     submit: {
 	  margin: theme.spacing(3, 0, 3),
 	  '&:hover': {
 		backgroundColor: '#B3E271',
 	}
-    },
+	}
   }));
 
 
@@ -77,100 +79,102 @@ const Contact = () => {
   }
 
     return (
-        <section style={{marginBottom: '5em'}}>
-        	<Container component="main" maxWidth="sm" style={{padding: '.85em'}}>
-        	  <Typography variant="h2">Request Your Free Estimate</Typography>
-        	    <Typography>Contact us now with your questions or to request a Free quote.</Typography>
-        
-        	    <form className={classes.form} 
-        	      onSubmit={e => { 
-        	        e.preventDefault()
-        	        submitInfo()
-        	      }}> 
-        	        <Grid container spacing={2}>
-        	            <Grid item xs={12} sm={6}>
-        	                <TextField
-							  className='form-inputs'
-        	                  label="First Name"
-        	                  required
-        	                  fullWidth
-        	                  id="firstName"
-        	                  variant="outlined"
-        	                  value={firstName}
-        	                  onChange={e => setFirstName(e.target.value)}
-        	                />
-        	            </Grid>
-        	            <Grid item xs={12} sm={6}> 
-        	                <TextField
-							  className='form-inputs'
-        	                  label="Last Name"
-        	                  required
-        	                  fullWidth
-        	                  id="lastName"
-        	                  variant="outlined"
-        	                  value={lastName}
-        	                  onChange={e => setLastName(e.target.value)}
-        	                />
-        	            </Grid>
-        	            <Grid item xs={12} sm={6}>
-        	                <TextField
-							  className='form-inputs'	
-        	                  label="Phone Number"
-        	                  required
-        	                  fullWidth
-        	                  id="phoneNumber"
-        	                  variant="outlined"
-        	                  value={phoneNumber}
-        	                  onChange={e => setPhoneNumber(e.target.value)}
-        	                />
-        	            </Grid>
-        	            <Grid item xs={12} sm={6}>
-        	                <TextField
-							  className='form-inputs'
-        	                  label="Email"
-        	                  type="email"
-        	                  required
-        	                  fullWidth
-        	                  id="email"
-        	                  variant="outlined"
-        	                  value={userEmail}
-        	                  onChange={e => setUserEmail(e.target.value)}
-        	                />
-        	            </Grid>
-        	            <Grid item xs={12}>
-        	                <TextField
-        	                  id="message"
-        	                  label="Message"
-        	                  placeholder="Message..."
-        	                  multiline
-        	                  rows={4}
-        	                  fullWidth
-        	                  required
-        	                  variant="outlined"
-        	                  value={message}
-        	                  onChange={e => setMessage(e.target.value)}
-        	                />
-        	            </Grid>
-        	        </Grid>
-        	        <Button
-        	          type="submit"
-        	          fullWidth
-        	          variant="contained"
-        	          color="secondary"
-        	          className={classes.submit}
-        	        >
-        	          Send
-        	        </Button>
-
-					<ReCAPTCHA
-					  ref={recaptchaRef}
-					  size='invisible'
-					  sitekey={process.env.REACT_APP_RECAPT_KEY}
-					  badge='inline'
-					  style={{ display: "inline-block" }}
-					/>				
-        	    </form> 
-              </Container>
+        <section style={{marginBottom: '5em'}} >
+				<Fade bottom>
+					<Container component="main" maxWidth="sm" style={{padding: '.85em'}}>
+					        	  <Typography variant="h2">Request Your Free Estimate</Typography>
+					        	    <Typography>Contact us now with your questions or to request a Free quote.</Typography>
+					        
+					        	    <form className={classes.form} 
+					        	      onSubmit={e => { 
+					        	        e.preventDefault()
+					        	        submitInfo()
+					        	      }}> 
+					        	        <Grid container spacing={2}>
+					        	            <Grid item xs={12} sm={6}>
+					        	                <TextField
+												  className='form-inputs'
+					        	                  label="First Name"
+					        	                  required
+					        	                  fullWidth
+					        	                  id="firstName"
+					        	                  variant="outlined"
+					        	                  value={firstName}
+					        	                  onChange={e => setFirstName(e.target.value)}
+					        	                />
+					        	            </Grid>
+					        	            <Grid item xs={12} sm={6}> 
+					        	                <TextField
+												  className='form-inputs'
+					        	                  label="Last Name"
+					        	                  required
+					        	                  fullWidth
+					        	                  id="lastName"
+					        	                  variant="outlined"
+					        	                  value={lastName}
+					        	                  onChange={e => setLastName(e.target.value)}
+					        	                />
+					        	            </Grid>
+					        	            <Grid item xs={12} sm={6}>
+					        	                <TextField
+												  className='form-inputs'	
+					        	                  label="Phone Number"
+					        	                  required
+					        	                  fullWidth
+					        	                  id="phoneNumber"
+					        	                  variant="outlined"
+					        	                  value={phoneNumber}
+					        	                  onChange={e => setPhoneNumber(e.target.value)}
+					        	                />
+					        	            </Grid>
+					        	            <Grid item xs={12} sm={6}>
+					        	                <TextField
+												  className='form-inputs'
+					        	                  label="Email"
+					        	                  type="email"
+					        	                  required
+					        	                  fullWidth
+					        	                  id="email"
+					        	                  variant="outlined"
+					        	                  value={userEmail}
+					        	                  onChange={e => setUserEmail(e.target.value)}
+					        	                />
+					        	            </Grid>
+					        	            <Grid item xs={12}>
+					        	                <TextField
+					        	                  id="message"
+					        	                  label="Message"
+					        	                  placeholder="Message..."
+					        	                  multiline
+					        	                  rows={4}
+					        	                  fullWidth
+					        	                  required
+					        	                  variant="outlined"
+					        	                  value={message}
+					        	                  onChange={e => setMessage(e.target.value)}
+					        	                />
+					        	            </Grid>
+					        	        </Grid>
+					        	        <Button
+					        	          type="submit"
+					        	          fullWidth
+					        	          variant="contained"
+					        	          color="secondary"
+					        	          className={classes.submit}
+					        	        >
+					        	          Send
+					        	        </Button>
+					
+										<ReCAPTCHA
+										  ref={recaptchaRef}
+										  size='invisible'
+										  sitekey={process.env.REACT_APP_RECAPT_KEY}
+										  badge='inline'
+										  style={{ display: "inline-block" }}
+										/>				
+					        	    </form> 
+					              </Container>
+				</Fade>
         </section>
     )
 }

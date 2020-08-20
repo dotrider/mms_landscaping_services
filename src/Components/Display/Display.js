@@ -9,43 +9,25 @@ import { makeStyles,
 } from '@material-ui/core';
 import './Display.css';
 import { MDBMask, MDBView} from "mdbreact";
+import Fade from 'react-reveal/Fade';
 
 
 
 const useStyles = makeStyles((theme) => ({
 
     card: {
-      // minWidth: 400,
-      // margin: '1em .30em'
       padding: '.75em'
     },
 
     activeCard: {
       textAlign: 'center',
-      color: 'black',
-      // width: 400,
-      
+      color: 'black',    
     },
     
     gridCont: {
-      // display: 'flex',
-      // justifyContent: 'center',
-      // alignItems: 'space-evenly',
-      // overflow: 'hidden',
       margin: '3.5em auto',
-      // padding: '1rem'
-      // maxWidth: 1390
-      // maxWidth: 1640
       width: '95%'
     },
-
-    // actionArea: {
-    //   "&:hover $focusHighlight": {
-    //     opacity: 1,
-    //   }
-    // },
-    // focusHighlight: {
-    // },
 
     serviceText: {
       color: '#ffffff',
@@ -81,11 +63,8 @@ const Display = ({data, sectionRef}) => {
                     {data.map(({img, name, id}) => (
                       <Grid key={id} className={cx(classes.card)} item xs={12} sm={6} md={4} >
                               <Link to={`/project/${id}`}>
-                                      <CardActionArea className={classes.activeCard}
-                                        // classes={{
-                                        //   root: classes.actionArea
-                                          // focusHighlight: classes.focusHighlight
-                                        // }}
+                                      <CardActionArea 
+                                        className={classes.activeCard}
                                       >
       
                                             <MDBView rounded zoom >
@@ -100,9 +79,11 @@ const Display = ({data, sectionRef}) => {
                                                       <Typography variant='h3' className={classes.serviceText}>
                                                                   {name}
                                                       </Typography> 
-                                                      <Typography variant='subtitle1' className={cx(classes.infoText, 'animated fadeInRight')}>
-                                                                  brief info here...
-                                                      </Typography>   
+                                                        <Typography variant='subtitle1' className={cx(classes.infoText)}>
+                                                            <Fade right>
+                                                                brief info here...
+                                                            </Fade>
+                                                        </Typography>   
                                                   </MDBMask>
                                             </MDBView>
                       

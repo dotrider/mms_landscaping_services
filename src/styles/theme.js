@@ -27,6 +27,11 @@ const theme = createMuiTheme({
       fontWeight: "400",
       lineHeight: "1.50em"
     },
+    h1: {
+      fontSize: "1.25rem",
+      fontWeight: 500,
+      textTransform: 'uppercase'
+    },
     h2: {
       fontSize: "1.25rem",
       fontWeight: 500,
@@ -43,9 +48,3 @@ const theme = createMuiTheme({
 });
 
 export default theme
-
-//Posible Colors
-
-//#18232A Primary
-//#297B76 secondary
-//#718F72'

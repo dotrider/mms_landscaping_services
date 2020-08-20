@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
   title: {
     flexGrow: 1,
+    textTransform: 'uppercase'
   },
 
   sectionDesktop: {
@@ -112,14 +113,12 @@ const Header = () => {
     return (
         <header className={classes.root} >
           <AppBar color='primary'
-                  position="static"
-                  // style={{boxShadow: 'none'}}
-                   
+                  position="static"                 
           >
               <Toolbar>
                     <IconButton style={{padding:'0', borderRadius: '25%'}}>
                       <Link to='/' className='links'>
-                        <Typography variant="h6">
+                        <Typography variant="h1">
                           MMS Landscaping
                         </Typography>
                       </Link>
@@ -135,10 +134,10 @@ const Header = () => {
                             </IconButton>
                         </div>
                         <div className={classes.sectionDesktop}>
-                            <Typography variant="h6" className={classes.title} >
+                            <Typography variant="h3"  className={classes.title} >
                                 About
                             </Typography>
-                            <Typography variant="h6" className={classes.title} >
+                            <Typography variant="h3"  className={classes.title} >
                             Services
                             </Typography>
                         </div>
