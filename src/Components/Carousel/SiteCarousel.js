@@ -1,22 +1,21 @@
 import React from 'react'
 import Carousel from 'react-material-ui-carousel'
-import {Button, Grid, CardMedia, Typography} from '@material-ui/core'
+import {CardMedia} from '@material-ui/core'
 import './SiteCarousel.css'
 import { MDBMask, MDBView} from "mdbreact";
 
 const SiteCarousel = ({data}) => {
 
         return (
-            <Grid>
+            <>
                  <Carousel 
                     interval={2000}
                  >
                     {
-                        data.map(({img, description, name, id}, i) => <MDBView>
+                        data.map(({img, description, name, id}, i) => <MDBView key={id}>
                             <CardMedia 
-                                key={id}
                                 className='card-media' 
-                                component="image"
+                                // component="SiteCarousel"
                                 alt={name}
                                 height="350"
                                 image={img}
@@ -35,7 +34,7 @@ const SiteCarousel = ({data}) => {
                        
                     )}
                 </Carousel>
-            </Grid>
+            </>                    
         )
     }
 

@@ -13,7 +13,7 @@ const theme = createMuiTheme({
       main: '#A2D45E',
       dark: '#ba000d',
       contrastText: '#fff'
-    },
+    }
     
   },
   typography: {
@@ -43,7 +43,7 @@ const theme = createMuiTheme({
       fontSize: "1rem",
       fontWeight: 500,
       lineHeight: "1.50em"
-    },
+    }
 }
 });
 

@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
    },
     infoText: {
       textAlign:'right',
-      padding: '2rem',
+      padding: '1rem',
       margin: '1em',
       color: '#ffffff',
       position: 'absolute',
@@ -81,7 +81,7 @@ const Display = ({data, sectionRef}) => {
                                                       </Typography> 
                                                         <Typography variant='subtitle1' className={cx(classes.infoText)}>
                                                             <Fade right>
-                                                                brief info here...
+                                                                Find out more...
                                                             </Fade>
                                                         </Typography>   
                                                   </MDBMask>

@@ -1,5 +1,15 @@
 
 .intro-container {
     margin: 2.5em auto;
-    padding: 1.1em;
+    padding: 2rem;
+}
+
+.inner-intro-container {
+    margin: 3.5rem 0 0;
+}
+
+@media (min-width: 770px ){
+    .inner-intro-container {
+        margin: 3.5rem 5rem 0;
+    }
 }

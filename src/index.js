@@ -12,13 +12,13 @@ import 'mdbreact/dist/css/mdb.css';
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         	<App />
       </ThemeProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById('root')
 );
 

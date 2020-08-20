@@ -3,16 +3,20 @@ import { Typography } from '@material-ui/core'
 import './Intro.css'
 
 const Intro = () => {
+
+    const companyName = 'MMS Landscaping'
+
     return (
         <section className='intro-container'>
 
-            <Typography variant="h2">MMS Landscaping</Typography>
-            <Typography>
-                Irure duis tempor quis proident deserunt adipisicing anim elit magna culpa Lorem voluptate est. 
-                Occaecat pariatur dolore excepteur et. Aliqua veniam aliquip est consectetur nulla nulla. 
-                Ullamco irure veniam irure eu aliqua proident ipsum pariatur enim nostrud est labore mollit fugiat. 
-                In ut nisi culpa sit ex et dolor sunt sit enim amet commodo est minim. Exercitation aliqua aliquip deserunt dolor culpa.
-            </Typography>
+            <Typography variant="h2">{companyName}</Typography>
+            <div className='inner-intro-container'>
+                <Typography color='textSecondary'>
+                    We provide full landscaping services with high quality results that will go beyong your landscaping needs.
+                    With over 15 years of experience in the industry our success is dedicated to building long term relationships with our clients.
+                    Whether it's just maintance that you need or looking to transform your garden, we can help.
+                </Typography>
+            </div>
         </section>
     )
 }

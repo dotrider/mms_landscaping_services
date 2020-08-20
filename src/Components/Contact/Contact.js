@@ -11,7 +11,7 @@ import {
 	Typography 
 } from '@material-ui/core';
 import './Contact.css'
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 
 
 
@@ -38,7 +38,6 @@ const Contact = () => {
           [ userEmail, setUserEmail ] = useState(''),
           [ message, setMessage ] = useState('');
 
-  // console.log('firsName', firstName)
 
   	const classes = useStyles();
   	const recaptchaRef = useRef();
@@ -56,7 +55,7 @@ const Contact = () => {
 	recaptchaRef.current.reset();
 
     axios.post('/api/email', {firstName, lastName, phoneNumber, userEmail, message, token }).then(() => {
-        // console.log(firstName, lastName, phoneNumber, userEmail, message)
+
         resetInfo()
 
       Swal.fire({
@@ -79,11 +78,13 @@ const Contact = () => {
   }
 
     return (
-        <section style={{marginBottom: '5em'}} >
-				<Fade bottom>
+        <section className='contact-container' >
+				{/* <Fade bottom> */}
 					<Container component="main" maxWidth="sm" style={{padding: '.85em'}}>
 					        	  <Typography variant="h2">Request Your Free Estimate</Typography>
-					        	    <Typography>Contact us now with your questions or to request a Free quote.</Typography>
+					        	    <Typography style={{color:'#5E6572'}}>
+										Contact us now with your questions or to request a Free quote.
+									</Typography>
 					        
 					        	    <form className={classes.form} 
 					        	      onSubmit={e => { 
@@ -174,7 +175,7 @@ const Contact = () => {
 										/>				
 					        	    </form> 
 					              </Container>
-				</Fade>
+				{/* </Fade> */}
         </section>
     )
 }

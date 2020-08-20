@@ -14,7 +14,7 @@ import {
   IconButton
 } from '@material-ui/core';
 import './Project.css';
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Project = (props) => {
 
-console.log(props)
+
 
     const classes = useStyles();
 
@@ -57,18 +57,20 @@ console.log(props)
     useEffect(() => {
       //window obj Reders top of the page
         window.scrollTo(0, 0)
+      
        const project = data.find(curr => curr.id === +props.match.params.id)
           setProject(project)
     },[props.match.params.id])
 
  
 
-    const { img, name } = project
+    const { img, name, details } = project
+
     return (
       <section className='project-cont'>
-                <Grid container xs={12} className={classes.grid}>
-                		<Grid xs={12} sm={6} item>
-                	<Fade left>
+                <Grid container  className={classes.grid}>
+                		<Grid sm={6} item className='animated fadeInLeft'>
+                	{/* <Fade left> */}
                 			<CardMedia
                 			        className={classes.card}
                 			        component="img"
@@ -76,38 +78,47 @@ console.log(props)
                 			        height="300"
                 			        image={img}
                 			/>
-                	</Fade>
+                	{/* </Fade> */}
                 		</Grid>
-                     <Grid item xs={12} sm={6}>
-                	 <Fade right>
-                          <List component="nav" 
-                          className={classes.list}
-                          >
-                          	    <ListItem>
-                          	        <ListItemIcon>
-                          	            <CheckRoundedIcon color="secondary" fontSize='medium' />
-                          	        </ListItemIcon>
-                          	        <ListItemText primary="Ex 1" />
-                          	    </ListItem>
-                          	    <ListItem>
-                          	        <ListItemIcon>
-                          	            <CheckRoundedIcon color="secondary" fontSize='medium'/>
-                          	        </ListItemIcon>
-                          	        <ListItemText primary="Ex 2" />
-                          	    </ListItem>
-                          	  </List>
-                   </Fade>
+                        <Grid item xs={12} sm={6} className='animated fadeInRight'>               
+                              <Typography variant='h2'
+                                className={classes.list}
+                              >
+                                  {name}
+                              </Typography>      
+                      {/* <Fade right> */}
+                              <List component="nav" 
+                                className={classes.list}
+                              >    
+                                { 
+                                  details? 
+                                      details.map((detail, i) => 
+                                        <ListItem key={i}>
+                                            <ListItemIcon>
+                                                <CheckRoundedIcon color="secondary" fontSize='large'/>
+                                            </ListItemIcon>
+                                            <ListItemText primary={detail} color='textSecondary'/>
+                                        </ListItem>)
+                                    : null
+                                  }
+                              </List>
+                      {/* </Fade> */}
                         </Grid>
                 	<Grid item xs={12} className={classes.info}>
-                    <Typography>Labore deserunt aliquip ad magna sint minim anim ex non cillum pariatur aute ea ipsum. Mollit esse magna Lorem labore reprehenderit labore eiusmod tempor. Minim esse anim sit excepteur commodo aute consectetur ea ad laborum. Ad tempor ipsum magna commodo et aliqua eiusmod sint veniam elit. Velit non et exercitation laboris adipisicing consequat irure ullamco labore veniam est dolore occaecat.</Typography>
+                      <Typography color='textSecondary'>
+                          Labore deserunt aliquip ad magna sint minim anim ex non cillum pariatur aute ea ipsum. 
+                          Mollit esse magna Lorem labore reprehenderit labore eiusmod tempor. Minim esse anim sit excepteur commodo aute consectetur ea ad laborum. 
+                          Ad tempor ipsum magna commodo et aliqua eiusmod sint veniam elit. 
+                          Velit non et exercitation laboris adipisicing consequat irure ullamco labore veniam est dolore occaecat.
+                      </Typography>
                   </Grid>
-                  {/* <Grid item xs={12} className={classes.backBtn}> */}
                       <IconButton onClick={props.history.goBack} 
-                      color="secondary"
-                      className={classes.backBtn}>
-                          <KeyboardBackspaceRoundedIcon edge='end' fontSize='large' />
+                          color="secondary"
+                          className={classes.backBtn}
+                          fontSize='large'
+                          >
+                          <KeyboardBackspaceRoundedIcon edge='end'/>
                       </IconButton>
-                  {/* </Grid> */}
                 </Grid>
       </section>
         );

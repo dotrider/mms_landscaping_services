@@ -3,7 +3,7 @@ import { useIntersection } from "react-use";
 import gsap from "gsap";
 import Display from '../Display/Display';
 import Intro from '../intro/Intro';
-import Carousel from '../Carousel/SiteCarousel';
+import SiteCarousel from '../Carousel/SiteCarousel';
 import Data from '../../data';
 import Contact from '../Contact/Contact';
 import './Home.css'
@@ -24,6 +24,13 @@ const Home = () => {
       threshold: 0.2
     })
   
+
+    gsap.config({
+      nullTargetWarn: false,
+    });
+
+
+
   //setting class with gsap animation
     const slideIn = (classname) => {
         gsap.to(classname, 1, {
@@ -52,7 +59,7 @@ const Home = () => {
     
     return (
         <main className='home-container' >
-                <Carousel data={data}/>
+                <SiteCarousel data={data}/>
                 <Intro/>
                 <Display data={data} sectionRef={sectionRef}/>
             	  <Contact sectionRef={sectionRef}/>
@@ -61,5 +68,3 @@ const Home = () => {
 }
 
 export default Home
-
-//removed height from div height: '80vh'

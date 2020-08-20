@@ -110,6 +110,8 @@ const Header = () => {
      </div>
     );
 
+    const companyName = 'MMS Landscaping'
+
     return (
         <header className={classes.root} >
           <AppBar color='primary'
@@ -119,7 +121,7 @@ const Header = () => {
                     <IconButton style={{padding:'0', borderRadius: '25%'}}>
                       <Link to='/' className='links'>
                         <Typography variant="h1">
-                          MMS Landscaping
+                          {companyName}
                         </Typography>
                       </Link>
                     </IconButton>
@@ -138,7 +140,7 @@ const Header = () => {
                                 About
                             </Typography>
                             <Typography variant="h3"  className={classes.title} >
-                            Services
+                              Services
                             </Typography>
                         </div>
                     </nav>
