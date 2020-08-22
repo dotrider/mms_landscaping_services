@@ -105,7 +105,7 @@ const Project = (props) => {
                       {/* </Fade> */}
                         </Grid>
                 	<Grid item xs={12} className={classes.info}>
-                      <Typography variant='h3'>
+                      <Typography variant='h3' style={{textAlign:'justify'}}>
                           {description}
                       </Typography>
                   </Grid>

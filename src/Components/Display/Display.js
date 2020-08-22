@@ -8,8 +8,7 @@ import { makeStyles,
   Typography
 } from '@material-ui/core';
 import './Display.css';
-import { MDBMask, MDBView} from "mdbreact";
-import Fade from 'react-reveal/Fade';
+import { MDBMask, MDBView, MDBAnimation} from "mdbreact";
 
 
 
@@ -21,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
     activeCard: {
       textAlign: 'center',
-      color: 'black',    
+      color: 'black' 
     },
     
     gridCont: {
@@ -80,9 +79,9 @@ const Display = ({data, sectionRef}) => {
                                                                   {name}
                                                       </Typography> 
                                                         <Typography variant='subtitle1' className={cx(classes.infoText)}>
-                                                            <Fade right>
-                                                                Find out more...
-                                                            </Fade>
+                                                                <MDBAnimation reveal type='fadeInRight'>
+                                                                	Find out more...
+                                                                </MDBAnimation>
                                                         </Typography>   
                                                   </MDBMask>
                                             </MDBView>

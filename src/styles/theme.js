@@ -42,7 +42,8 @@ const theme = createMuiTheme({
     h3: {
       fontSize: "1rem",
       fontWeight: 500,
-      lineHeight: "1.50em"
+      lineHeight: "1.50em",
+      color: '#6D6D6D'
     }
 }
 });

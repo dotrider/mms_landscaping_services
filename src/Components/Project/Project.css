@@ -2,11 +2,12 @@
     width: 95%;
     margin: 0 auto;
     max-width: 77.500em;
-    height: 80vh;
+    /* height: 80vh; */
 }
 
 @media (max-width: 770px ){
     .grid-list {
         margin-right: 5em ;
     }
+ 
 }
