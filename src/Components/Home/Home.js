@@ -7,6 +7,7 @@ import SiteCarousel from '../Carousel/SiteCarousel';
 import Data from '../../data';
 import Contact from '../Contact/Contact';
 import './Home.css'
+import ServiceAreas from "../ServiceAreas/ServiceAreas";
 
 const Home = () => {
     const [ data ] = useState(Data)
@@ -63,6 +64,7 @@ const Home = () => {
                 <Intro/>
                 <Display data={data} sectionRef={sectionRef}/>
             	  <Contact sectionRef={sectionRef}/>
+                <ServiceAreas/>
         </main>
     )
 }
