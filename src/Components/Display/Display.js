@@ -52,44 +52,49 @@ const useStyles = makeStyles((theme) => ({
 
 const Display = ({data, sectionRef}) => {
   // console.log('display', data)
+
+
+  const services = 'Our Services', moreInfo = 'Find out more...'
   const classes = useStyles();
 
  
     return (
         <section ref={sectionRef}>
-            <Typography variant='h2' className='slideIn'>Our Services</Typography>
-                <Grid className={cx(classes.gridCont, 'slideIn')} container justify='center' >
-                    {data.map(({img, name, id}) => (
-                      <Grid key={id} className={cx(classes.card)} item xs={12} sm={6} md={4} >
-                              <Link to={`/project/${id}`}>
-                                      <CardActionArea 
-                                        className={classes.activeCard}
-                                      >
-      
-                                            <MDBView rounded zoom >
-                                                <CardMedia 
-                                                  component="img"
-                                                  alt={name}
-                                                  // height="275"
-                                                  image={img}
-                                                  title="Contemplative Reptile"
-                                                />
-                                                  <MDBMask overlay='black-light'>
-                                                      <Typography variant='h3' className={classes.serviceText}>
-                                                                  {name}
-                                                      </Typography> 
-                                                        <Typography variant='subtitle1' className={cx(classes.infoText)}>
-                                                                <MDBAnimation reveal type='fadeInRight'>
-                                                                	Find out more...
-                                                                </MDBAnimation>
-                                                        </Typography>   
-                                                  </MDBMask>
-                                            </MDBView>
-                      
-                                      </CardActionArea>
-                              </Link>
-                      </Grid>
-                    ))}
+            <Typography variant='h2' className='slideIn'>{services}</Typography>
+                <Grid className={cx(classes.gridCont, 'slideIn')} 
+                      container justify='center' >
+                    {
+                      data.map(({img, name, id}) => (
+                          <Grid key={id} className={cx(classes.card)} item xs={12} sm={6} md={4} >
+                                  <Link to={`/service/${id}`}>
+                                          <CardActionArea 
+                                            className={classes.activeCard}
+                                          >
+                                                <MDBView rounded zoom >
+                                                      <CardMedia 
+                                                          component="img"
+                                                          alt={name}
+                                                          // height="275"
+                                                          image={img}
+                                                          title="Contemplative Reptile"
+                                                      />
+                                                        <MDBMask overlay='black-light'>
+                                                            <Typography variant='h3' className={classes.serviceText}>
+                                                                        {name}
+                                                            </Typography> 
+                                                            <Typography variant='subtitle1' className={cx(classes.infoText)}>
+                                                                    <MDBAnimation reveal type='fadeInRight'>
+                                                                        {moreInfo}
+                                                                    </MDBAnimation>
+                                                            </Typography>   
+                                                        </MDBMask>
+                                                </MDBView>
+                          
+                                          </CardActionArea>
+                                  </Link>
+                          </Grid>
+                      ))
+                    }
                 </Grid>   
       </section>      
     )

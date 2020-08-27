@@ -10,8 +10,8 @@ export default (
 
     <Switch>
         <Route exact path='/' component={Home}/> 
-        <Route path='/project/:id' component={Project}/>
+        <Route path='/service/:id' component={Project}/>
         <Route path='/contactUs' component={Contact}/> 
-        <Route path='/services' component={Display}/> 
+        <Route path='/display' component={Display}/> 
     </Switch>
 )
