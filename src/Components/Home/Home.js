@@ -64,7 +64,7 @@ const Home = () => {
                 <Intro/>
                 <Display data={data} sectionRef={sectionRef}/>
             	  <Contact/>
-                <AboutContainer/>
+                {/* <AboutContainer/> */}
         </main>
     )
 }

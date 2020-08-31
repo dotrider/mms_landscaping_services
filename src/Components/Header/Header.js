@@ -28,7 +28,9 @@ const useStyles = makeStyles((theme) => ({
 
   title: {
     flexGrow: 1,
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    color: '#FFF',
+    cursor: 'pointer'
   },
 
   sectionDesktop: {
@@ -36,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       display: 'flex',
       justifyContent: 'space-between',
-      width: '175px'
+      width: '20em'
     },
   },
 
@@ -73,6 +75,11 @@ const Header = () => {
     const classes = useStyles();
  
     const [ mobileMenu, setMobileMenu ] = useState(false);
+    const menu = [
+      { name: 'Services', label: 'Services' },
+      { name: 'About', label: 'About' },
+      { name: 'Contact Us', label: 'Contact' },
+    ]
 
 
 
@@ -100,10 +107,10 @@ const Header = () => {
         onKeyDown={toggleDrawer(anchor, false)}
       >
         <List>
-          {['About', 'Services'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+          {menu.map(({name}, i) => (
+            <ListItem button key={i}>
+              <ListItemIcon>{i % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={name} />
             </ListItem>
           ))}
         </List>
@@ -136,16 +143,12 @@ const Header = () => {
                             </IconButton>
                         </div>
                         <div className={classes.sectionDesktop}>
-           
-                            <Typography variant="h3"  className={classes.title} >
-                              	Services
+                          {
+                            menu.map(({name}, i) => 
+                            <Typography key={i} variant="h3"  className={classes.title} >
+                              	{name}
                             </Typography>
-                            <Typography variant="h3"  className={classes.title} >
-                                Contact Us
-                            </Typography>
-                            <Typography variant="h3"  className={classes.title} >
-                                About
-                            </Typography>
+                            )}
                         </div>
                     </nav>
               </Toolbar>

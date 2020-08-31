@@ -6,7 +6,7 @@ import {
     makeStyles,
     Grid, 
   } from '@material-ui/core';
-
+  import { MDBAnimation } from "mdbreact";
 
 
 
@@ -19,7 +19,12 @@ import {
     },
     container: {
         backgroundColor: '#222326',
-        color:'white'
+        color:'white',
+        display: 'flex',
+        justifyContent: 'center'
+    },
+    innerContainer: {
+        maxWidth: '77.500em',
     },
     list: {
         padding:'1em'
@@ -56,17 +61,21 @@ const AboutContainer = () => {
 
 
     return (
-        <Grid container justify='center' className={classes.container}>
-            <ServiceAreas 
-                locations={locations} 
-                classes={classes}
-                serviceHeading={serviceHeading}
-            />
-            <AboutUs 
-                classes={classes}
-                aboutUs={aboutUs}
-            />     
-        </Grid>
+        <>
+            <MDBAnimation reveal type='fadeInUp' className={classes.container}>
+                    <Grid container justify='center' className={classes.innerContainer}>
+                        <ServiceAreas 
+                            locations={locations} 
+                            classes={classes}
+                            serviceHeading={serviceHeading}
+                        />
+                        <AboutUs 
+                            classes={classes}
+                            aboutUs={aboutUs}
+                        />     
+                    </Grid>
+            </MDBAnimation>
+        </>
     )
 }
 
