@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Service = (props) => {
-
+  console.log('service', props)
 
 
     const classes = useStyles();

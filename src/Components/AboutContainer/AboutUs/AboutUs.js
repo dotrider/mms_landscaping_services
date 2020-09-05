@@ -6,7 +6,7 @@ import {
 
 const AboutUs = ({classes, aboutUs}) => {
     return (
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} id='aboutUs'>
             <Typography variant='h2' className={classes.headings}>{aboutUs}</Typography>
 
         </Grid>

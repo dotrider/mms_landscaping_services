@@ -24,7 +24,7 @@ const Areas = ({locations, classes, serviceHeading}) => {
                                     <ListItemIcon>
                                         <CheckRoundedIcon color="secondary" fontSize='large'/>
                                     </ListItemIcon>
-                                    <ListItemText primary={city[0]} variant='h3'/>
+                                    <ListItemText style={{width: '150px'}} primary={city[0]} variant='h3'/>
                                         {city[1]?
                                             <>
                                                 <ListItemIcon>

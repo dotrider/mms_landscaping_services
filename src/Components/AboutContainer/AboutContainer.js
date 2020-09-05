@@ -7,6 +7,7 @@ import {
     Grid, 
   } from '@material-ui/core';
   import { MDBAnimation } from "mdbreact";
+  import { withRouter } from 'react-router-dom'
 
 
 
@@ -35,8 +36,8 @@ import {
 
 
 
-const AboutContainer = () => {
-
+const AboutContainer = (props) => {
+// console.log('props', props)
         const [locations, setLocations] = useState([])
         const serviceHeading = 'Current Service Areas', aboutUs = 'About Us'
 
@@ -69,14 +70,20 @@ const AboutContainer = () => {
                             classes={classes}
                             serviceHeading={serviceHeading}
                         />
-                        <AboutUs 
-                            classes={classes}
-                            aboutUs={aboutUs}
-                        />     
+                    {
+                        props.location.pathname === '/'
+                            ?
+                            <AboutUs 
+                                classes={classes}
+                                aboutUs={aboutUs}
+                            /> 
+                            :
+                            null  
+                    }
                     </Grid>
             </MDBAnimation>
         </>
     )
 }
 
-export default AboutContainer
+export default withRouter(AboutContainer)

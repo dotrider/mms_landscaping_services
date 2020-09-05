@@ -59,7 +59,7 @@ const Display = ({data, sectionRef}) => {
 
  
     return (
-        <section ref={sectionRef}>
+        <section ref={sectionRef} id='services'>
             <Typography variant='h2' className='slideIn'>{services}</Typography>
                 <Grid className={cx(classes.gridCont, 'slideIn')} 
                       container justify='center' >

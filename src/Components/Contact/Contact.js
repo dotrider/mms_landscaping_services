@@ -78,7 +78,7 @@ const Contact = () => {
   }
 
     return (
-        <section className='contact-container' >
+        <section id='contact-container' >
 					<MDBAnimation reveal type='fadeInUp'>
 						<Container component="main" maxWidth="sm" style={{padding: '.90em'}}>
 						        	  <Typography variant="h2">Request Your Free Estimate</Typography>
