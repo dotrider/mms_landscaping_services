@@ -102,7 +102,7 @@ const list = (anchor) => (
               to={label}
               spy={true}
               smooth={true}
-              duration= {800}
+              duration= {1000}
             >
               <ListItem button
               onClick={toggleDrawer(anchor, false)}
