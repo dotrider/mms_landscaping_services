@@ -7,7 +7,7 @@ import SiteCarousel from '../Carousel/SiteCarousel';
 import Data from '../../data';
 import Contact from '../Contact/Contact';
 import './Home.css'
-import AboutContainer from "../AboutContainer/AboutContainer";
+
 
 const Home = () => {
     const [ data ] = useState(Data)

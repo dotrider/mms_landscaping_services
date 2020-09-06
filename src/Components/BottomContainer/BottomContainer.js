@@ -1,12 +1,11 @@
 import React,{ useState, useEffect } from 'react'
 import locationsData from '../../servicedata'
-import ServiceAreas from './ServiceAreas/ServiceAreas'
-import AboutUs from './AboutUs/AboutUs'
+import ServiceAreas from '../ServiceAreas/ServiceAreas'
+import AboutUs from '../AboutUs/AboutUs'
 import { 
     makeStyles,
     Grid, 
   } from '@material-ui/core';
-  import { MDBAnimation } from "mdbreact";
   import { withRouter } from 'react-router-dom'
 
 
@@ -36,7 +35,7 @@ import {
 
 
 
-const AboutContainer = (props) => {
+const BottomContainer = (props) => {
 // console.log('props', props)
         const [locations, setLocations] = useState([])
         const serviceHeading = 'Current Service Areas', aboutUs = 'About Us'
@@ -63,7 +62,7 @@ const AboutContainer = (props) => {
 
     return (
         <>
-            <MDBAnimation reveal type='fadeInUp' className={classes.container}>
+            <Grid className={classes.container}>
                     <Grid container justify='center' className={classes.innerContainer}>
                         <ServiceAreas 
                             locations={locations} 
@@ -81,9 +80,9 @@ const AboutContainer = (props) => {
                             null  
                     }
                     </Grid>
-            </MDBAnimation>
+            </Grid>
         </>
     )
 }
 
-export default withRouter(AboutContainer)
+export default withRouter(BottomContainer)
