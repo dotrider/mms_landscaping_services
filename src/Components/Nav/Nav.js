@@ -74,7 +74,7 @@ const Nav = () => {
     const menu = [
         { name: 'Services', label: 'services' },
         { name: 'Contact Us', label: 'contact-container' },
-        { name: 'About', label: 'aboutUs' }
+        { name: 'About Us', label: 'aboutUs' }
       ]
 
 
@@ -91,35 +91,32 @@ const Nav = () => {
 
 ///handles styles ex. Drawer width and renders mobile menu text/icons
 const list = (anchor) => (
-    <div
-      className={clsx(classes.list
-      //   , {
-      //   [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-      // }
-      )}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
+      <List
+        className={clsx(classes.list)}
+        role="presentation"
+        onKeyDown={toggleDrawer(anchor, false)}
+      >
         {menu.map(({name, label}, i) => (
             <Link key={i}
               activeClass="active"
               to={label}
               spy={true}
               smooth={true}
-            //   offset={-70}
               duration= {800}
             >
-              <ListItem button>
+              <ListItem button
+              onClick={toggleDrawer(anchor, false)}
+              >
                   <ListItemIcon>{i % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                   <ListItemText primary={name} />
               </ListItem>
              </Link>
         ))}
       </List>
-   </div>
   );
+
+
+
 
 
     return (

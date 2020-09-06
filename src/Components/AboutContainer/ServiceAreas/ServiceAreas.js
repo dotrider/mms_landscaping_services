@@ -18,19 +18,21 @@ const Areas = ({locations, classes, serviceHeading}) => {
             <Typography variant='h2' className={classes.headings}>{serviceHeading}</Typography>
                 <List component="nav" className={classes.list}
                         >    
-                        { 
+                        {   //city list      
                             locations.map((city, i) => 
+                            //displays cities in the first column
                                 <ListItem key={i}>
                                     <ListItemIcon>
                                         <CheckRoundedIcon color="secondary" fontSize='large'/>
                                     </ListItemIcon>
-                                    <ListItemText style={{width: '150px'}} primary={city[0]} variant='h3'/>
+                                    <ListItemText style={{width:'250px'}} primary={city[0]} variant='h3'/>
+                                        {/* displays city in the second column*/}
                                         {city[1]?
                                             <>
                                                 <ListItemIcon>
                                                     <CheckRoundedIcon color="secondary" fontSize='large'/>
                                                 </ListItemIcon>
-                                                <ListItemText primary={city[1]} variant='h3'/> 
+                                                <ListItemText style={{width:'150px'}} primary={city[1]} variant='h3'/> 
                                             </>
                                             : 
                                             null
