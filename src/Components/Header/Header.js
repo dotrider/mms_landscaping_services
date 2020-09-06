@@ -20,7 +20,7 @@ const Header = () => {
 
 
     return (
-        <header>
+        <header id='header'>
           <AppBar color='primary'
                   position="static"                 
           >

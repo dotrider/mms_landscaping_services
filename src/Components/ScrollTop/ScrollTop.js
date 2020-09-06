@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ExpandLessRoundedIcon from '@material-ui/icons/ExpandLessRounded';
+import { Link } from 'react-scroll'
 import './ScrollTop.css'
 
 const ScrollTop = () => {
@@ -14,14 +15,14 @@ const ScrollTop = () => {
             setVisible(false)
     }
 
-    const scrollUp = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        })
-    }
+    // const scrollUp = () => {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: 'smooth'
+    //     })
+    // }
 
-    //using event listener only to check weather or not show scroll-up icon
+    //using event listener for checking purposes weather or not show scroll-up icon
 
     document.addEventListener('scroll', toggleVisibility)
 
@@ -30,12 +31,20 @@ const ScrollTop = () => {
         <> 
             {
                 visible && (
-                    <ExpandLessRoundedIcon 
-                        onClick={scrollUp}
-                        id='scroll-up'
-                        fontSize='large'
-                        color='white'
-                    />
+                    <Link
+                        activeClass="active"
+                        to='header'
+                        spy={true}
+                        smooth={true}
+                        duration= {800}
+                    >
+                        <ExpandLessRoundedIcon 
+                            button
+                            id='scroll-up'
+                            fontSize='large'
+                            color='white'
+                        />
+                     </Link>
                 )
             }
         </>
