@@ -9,28 +9,28 @@ const data = [
         
     }, {
         id: 2,
+        name: 'Weed Control',
+        img: "https://cdn.pixabay.com/photo/2017/09/24/15/54/botanical-garden-2782227_1280.jpg",
+        description: 'Keep your yard free of weeds! We know keeping weeds away can be a big job and the longer you wait to have them remove the bigger the job gets!. We provide lawn weed control services and removal in no time!',
+        details: ['ex1', 'ex2', 'ex3']       
+    }, {
+        id: 3,
         name: 'Tree Management',
         img: "https://cdn.pixabay.com/photo/2013/04/05/01/07/tree-100589_1280.jpg",
         description: 'Unpredictable weather happens, heavy rain, wind, dust storms, you name it. If you have a hazardous tree in your yard it might be a good idea removing it before weather conditions break off a branch or send the whole tree down to the ground. If you are in need of expert tree removal services whether is due to a storm or not we can help.',
         details: ['Tree Removal', 'Trimming', 'Pruning', 'Left Over Debris']
     }, {
-        id: 3,
-        name: 'Weed Control',
-        img: "https://cdn.pixabay.com/photo/2017/09/24/15/54/botanical-garden-2782227_1280.jpg",
-        description: 'Keep your yard free of weeds! We know keeping weeds away can be a big job and the longer you wait to have them remove the bigger the job gets!. We provide lawn weed control services and removal in no time!',
-        details: ['ex1', 'ex2', 'ex3']
-    }, {
         id: 4,
-        name: 'Irrigation repair & Install',
-        img: "https://cdn.pixabay.com/photo/2016/07/27/08/14/water-1544808_1280.jpg",
-        description: 'Arizona, such a beautiful state, however temperatures can increase intensively during summer, after all we do live in a beautuful desert. Lack of water can impact the growth and quality of you garden. It is essential your garden receives the proper amount of water whether is your lawn, plants or trees. The right solutions for those needs is an irrigation system which can substantialy save you money and water usage monthly!',
-        details: ['Irrigation Install/Repair', 'Sprinkler Replacement', 'Valve Wiring/Adjustent', 'And More!']
-    }, {
-        id: 5,
         name: 'Pavers',
         img: "https://cdn.pixabay.com/photo/2013/12/14/00/30/pavement-228088_1280.jpg",
         description: 'Are you looking to transform your front or backyard with something with texture and character, unique and beutiful? Pavers is what you are looking for! In fact, pavers will complement your home\'s style in many ways, not just looks but also durability. Manufactured in a range of colors, textures and shapes to construct your vision into reality, we will transform you property into a more enjoyable outdoor experience, plus they are maintenance free!',
         details: ['Driveways', 'Walkways', 'Patios', 'Paths']
+    }, {
+        id: 5,
+        name: 'Irrigation repair & Install',
+        img: "https://cdn.pixabay.com/photo/2016/07/27/08/14/water-1544808_1280.jpg",
+        description: 'Arizona, such a beautiful state, however temperatures can increase intensively during summer, after all we do live in a beautuful desert. Lack of water can impact the growth and quality of you garden. It is essential your garden receives the proper amount of water whether is your lawn, plants or trees. The right solutions for those needs is an irrigation system which can substantialy save you money and water usage monthly!',
+        details: ['Irrigation Install/Repair', 'Sprinkler Replacement', 'Valve Wiring/Adjustent', 'And More!']
     }, {
         id: 6,
         name: 'Gravel & Rock',

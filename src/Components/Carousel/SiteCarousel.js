@@ -12,7 +12,7 @@ const SiteCarousel = ({data}) => {
                     interval={2000}
                  >
                     {
-                        data.map(({img, description, name, id}, i) => <MDBView key={id}>
+                        data.filter((e, i )=> i % 2 === 0).map(({img, description, name, id}, i) => <MDBView key={id}>
                             <CardMedia 
                                 className='card-media' 
                                 // component="SiteCarousel"
