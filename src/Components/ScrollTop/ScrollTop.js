@@ -22,7 +22,7 @@ const ScrollTop = () => {
     //     })
     // }
 
-    //using event listener for checking purposes weather or not show scroll-up icon
+    //using event listener for checking purposes only whether or not show scroll-up icon
 
     document.addEventListener('scroll', toggleVisibility)
 

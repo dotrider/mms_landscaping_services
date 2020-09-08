@@ -108,9 +108,11 @@ const Service = (props) => {
                           <IconButton onClick={props.history.goBack} 
                               color="secondary"
                               className={classes.backBtn}
-                              fontSize='large'
                           >
-                              <KeyboardBackspaceRoundedIcon edge='end'/>
+                              <KeyboardBackspaceRoundedIcon 
+                                edge='end'
+                                fontSize='large'
+                                />
                           </IconButton>
                 </Grid>
       </section>

@@ -36,7 +36,9 @@ const Contact = () => {
           [ lastName, setLastName ] = useState(''),
           [ phoneNumber, setPhoneNumber ] = useState(''),
           [ userEmail, setUserEmail ] = useState(''),
-          [ message, setMessage ] = useState('');
+		  [ message, setMessage ] = useState('');
+	const contactHeading = 'Request Your Free Estimate'
+	const contactSubtitle = 'Contact us now with your questions or to request a Free quote.'
 
 
   	const classes = useStyles();
@@ -48,6 +50,7 @@ const Contact = () => {
 
 
   const submitInfo = async () => {
+
 
 	const token = await recaptchaRef.current.executeAsync();
 	// console.log(token, 'token')
@@ -80,10 +83,10 @@ const Contact = () => {
     return (
         <section id='contact-container' >
 					<MDBAnimation reveal type='fadeInUp'>
-						<Container component="main" maxWidth="sm" style={{padding: '.90em'}}>
-						        	  <Typography variant="h2">Request Your Free Estimate</Typography>
+						<Container component="main" maxWidth="s" style={{padding: '.90em'}}>
+						        	  <Typography variant="h2">{contactHeading}</Typography>
 						        	    <Typography variant='subtitle1' style={{color:'#638B1D'}}>
-											Contact us now with your questions or to request a Free quote.
+											{contactSubtitle}
 										</Typography>
 						        
 						        	    <form className={classes.form} 

@@ -1,10 +1,14 @@
 
 #contact-container {
     margin-bottom: 5em;
+    padding: 2.5em;
 }
 
 
 @media (max-width: 770px ){
+    #contact-container{
+        padding: 0;
+    }
     .form-inputs {
         height: 3em;
     }

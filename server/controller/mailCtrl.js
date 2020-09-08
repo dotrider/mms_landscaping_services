@@ -57,7 +57,7 @@ module.exports = {
                 let mail = await transporter.sendMail(mailOps, (err, res) => {
 
                     if(err){
-                    console.log('error occurs:', err)
+                        res.status(500).json('error occurs:', err)
                     }else {
                         res.status(200).json(mail)
                     }
