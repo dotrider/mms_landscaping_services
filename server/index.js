@@ -3,10 +3,10 @@ const express = require('express'),
     // { PORT_NUM } = process.env,
     cors = require('cors'),
     app = express();
-
+    
+    const { contact } = require('./controller/mailCtrl')
     const PORT = process.env.PORT || 4545
 
-    const { contact } = require('./controller/mailCtrl')
 
 //Middleware
 app.use(cors())
