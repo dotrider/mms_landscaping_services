@@ -7,14 +7,15 @@ const express = require('express'),
     const { contact } = require('./controller/mailCtrl')
     const PORT = process.env.PORT || 4545
 
-
 //Middleware
 app.use(cors())
 app.use(express.json())
 
 if(process.env.NODE_ENV === 'production'){
 //  app.use(express.static(__dirname + '../build'));
-    app.use('/static', express.static(path.join(__dirname, '../build')));
+    // app.use('/static', express.static(path.join(__dirname, '../build')));
+    app.use(express.static(path.join(__dirname, '/..build')));
+
 
 
     app.get('*', (req, res)=>{
