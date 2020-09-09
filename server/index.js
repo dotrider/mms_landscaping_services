@@ -4,7 +4,7 @@ const express = require('express'),
     cors = require('cors'),
     app = express();
 
-    // const PORT = process.env.PORT || 4545
+    const PORT = process.env.PORT || 4545
 
     const { contact } = require('./controller/mailCtrl')
 
@@ -12,11 +12,11 @@ const express = require('express'),
 app.use(cors())
 app.use(express.json())
 
- app.set('port', (process.env.PORT || 4545));
+
  app.use(express.static(__dirname + '/public'));
 
- app.get('/', function(req, res) {
- response.send('GET IT!');
+ app.get('/', (req, res) => {
+    res.send('GET IT!');
  });
 
 app.post('/api/email', contact)
