@@ -1,10 +1,10 @@
 require('dotenv').config();
 const express = require('express'),
-    { PORT_NUM } = process.env,
+    // { PORT_NUM } = process.env,
     cors = require('cors'),
     app = express();
 
-    const PORT = process.env.PORT || PORT_NUM
+    const PORT = process.env.PORT || 4545
 
     const { contact } = require('./controller/mailCtrl')
 

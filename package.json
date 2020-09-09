@@ -25,14 +25,17 @@
     "react-scripts": "^3.4.3",
     "react-scroll": "^1.8.1",
     "react-use": "^15.3.3",
+    "serve": "^11.3.2",
     "sweetalert2": "^9.17.1",
     "uninstall": "0.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
