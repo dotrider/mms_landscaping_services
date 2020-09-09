@@ -19,9 +19,9 @@ module.exports = {
         const googleResponse = await axios.post(googleVerify)
         
         const { success } = await googleResponse.data
-        // console.log(success, 'google response')
+        console.log(success, 'google response')
         
-        if(!success) return res.sendStatus(500)
+        // if(!success) return res.sendStatus(500)
         
 
         //Run mailer after validation
