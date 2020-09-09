@@ -16,3 +16,5 @@ app.use(express.json())
 app.post('/api/email', contact)
 
 app.listen(PORT, () => console.log(`Running wild on port ${PORT}`))
+
+
