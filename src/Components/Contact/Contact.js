@@ -59,7 +59,7 @@ const Contact = () => {
 	//after submitting, reCAPTCHA veryfies user again
 	recaptchaRef.current.reset();
 
-    axios.post('/api/email', {firstName, lastName, phoneNumber, userEmail, message, token }).then(() => {
+    axios.post(`${process.env.REACT_APP_API_CALL}/api/email`, {firstName, lastName, phoneNumber, userEmail, message, token }).then(() => {
 
         resetInfo()
 
