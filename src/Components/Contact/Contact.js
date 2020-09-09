@@ -85,7 +85,7 @@ const Contact = () => {
     return (
         <section id='contact-container' >
 					<MDBAnimation reveal type='fadeInUp'>
-						<Container component="main" maxWidth="s" style={{padding: '.90em'}}>
+						<Container component="main" maxWidth="md" style={{padding: '.90em'}}>
 						        	  <Typography variant="h2">{contactHeading}</Typography>
 						        	    <Typography variant='subtitle1' style={{color:'#638B1D'}}>
 											{contactSubtitle}

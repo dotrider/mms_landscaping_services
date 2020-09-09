@@ -39,10 +39,9 @@ const ScrollTop = () => {
                         duration= {800}
                     >
                         <ExpandLessRoundedIcon 
-                            button
+                            button='true'
                             id='scroll-up'
                             fontSize='large'
-                            color='white'
                         />
                      </Link>
                 )
