@@ -11,26 +11,20 @@ app.use(cors())
 app.use(express.json())
 
 
- app.get('/', (req, res) => {
-    res.send('GET IT!');
- });
+//  app.get('/', (req, res) => {
+//     res.send('GET IT!');
+//  });
 
 app.post('/api/email', contact)
 
 
 if(process.env.NODE_ENV === 'production'){
-    // app.use(express.static(__dirname + '../build'));
-    // app.use('/static', express.static(path.join(__dirname, '../build')));
-    // app.use(express.static(path.join(__dirname, '/..build')));
 
-//     app.get('*', (req, res)=>{
-//     res.sendFile(path.join(__dirname, '../build/index.html'));
-// });
-app.use(express.static(path.join(__dirname, '../build')));
+    app.use(express.static(path.join(__dirname, '../build')));
 
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
+    app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 }
 
