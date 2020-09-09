@@ -10,6 +10,14 @@ const express = require('express'),
 app.use(cors())
 app.use(express.json())
 
+
+ app.get('/', (req, res) => {
+    res.send('GET IT!');
+ });
+
+app.post('/api/email', contact)
+
+
 if(process.env.NODE_ENV === 'production'){
     // app.use(express.static(__dirname + '../build'));
     // app.use('/static', express.static(path.join(__dirname, '../build')));
@@ -26,12 +34,6 @@ app.get('/*', (req, res) => {
 });
 }
 
-
- app.get('/', (req, res) => {
-    res.send('GET IT!');
- });
-
-app.post('/api/email', contact)
 
 app.listen(PORT, () => console.log(`Running wild on port ${PORT}`))
 
