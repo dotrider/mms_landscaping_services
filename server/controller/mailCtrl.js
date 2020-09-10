@@ -20,7 +20,7 @@ module.exports = {
         const googleResponse = await axios.post(googleVerify)
         
         const { success } = await googleResponse.data
-        console.log(success, 'google response')
+        // console.log(success, 'google response')
         
         if(!success) return res.sendStatus(500)
         
@@ -55,7 +55,9 @@ module.exports = {
 
             }
 
-            let mail = await transporter.sendMail(mailOps)
+            let mail = await transporter.sendMail(mailOps, err => {
+                console.log('err', err)
+            })
         
             console.log('mail',mail)
             // if(err){
