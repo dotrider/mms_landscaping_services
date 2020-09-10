@@ -7,7 +7,6 @@ const nodemailer = require('nodemailer'),
 
 module.exports = {
     contact: async(req, res) => {
-        console.log(EMAIL, PASSWORD)
 
         const { firstName, lastName, phoneNumber, userEmail, message, token } = req.body;
         // console.log('name', name, 'userEmail', userEmail, 'message', message)
@@ -55,16 +54,8 @@ module.exports = {
 
             }
 
-            let mail = await transporter.sendMail(mailOps, err => {
-                console.log('err', err)
-            })
+            await transporter.sendMail(mailOps)
         
-            console.log('mail',mail)
-            // if(err){
-            //     res.status(500).json('error occurs:', err)
-            // }else {
-            //     res.status(200).json(mail)
-            // }
 
         res.sendStatus(200)
     }
