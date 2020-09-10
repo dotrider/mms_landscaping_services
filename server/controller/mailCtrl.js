@@ -1,5 +1,4 @@
 const axios = require('axios');
-const { resolveContent } = require('nodemailer/lib/shared');
 
 const nodemailer = require('nodemailer'),
     { EMAIL, PASSWORD, RECOM_KEY } = process.env;
@@ -8,6 +7,7 @@ const nodemailer = require('nodemailer'),
 
 module.exports = {
     contact: async(req, res) => {
+        console.log(EMAIL, PASSWORD)
 
         const { firstName, lastName, phoneNumber, userEmail, message, token } = req.body;
         // console.log('name', name, 'userEmail', userEmail, 'message', message)
