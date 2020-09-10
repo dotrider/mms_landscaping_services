@@ -1,4 +1,5 @@
 const axios = require('axios');
+const { resolveContent } = require('nodemailer/lib/shared');
 
 const nodemailer = require('nodemailer'),
     { EMAIL, PASSWORD, RECOM_KEY } = process.env;
@@ -54,15 +55,15 @@ module.exports = {
 
             }
 
-                let mail = await transporter.sendMail(mailOps, (err, res) => {
+            let mail = await transporter.sendMail(mailOps)
+        
+            console.log('mail',mail)
+            // if(err){
+            //     res.status(500).json('error occurs:', err)
+            // }else {
+            //     res.status(200).json(mail)
+            // }
 
-                    if(err){
-                        res.status(500).json('error occurs:', err)
-                    }else {
-                        res.status(200).json(mail)
-                    }
-                })
-    
         res.sendStatus(200)
     }
 }
