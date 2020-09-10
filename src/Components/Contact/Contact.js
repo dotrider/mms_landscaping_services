@@ -171,13 +171,13 @@ const Contact = () => {
 						        	          Send
 						        	        </Button>
 						
-											<ReCAPTCHA
+											{/* <ReCAPTCHA
 											  ref={recaptchaRef}
 											  size='invisible'
 											  sitekey={process.env.REACT_APP_RECAPT_KEY}
 											  badge='inline'
 											  style={{ display: "inline-block" }}
-											/>				
+											/>				 */}
 						        	    </form> 
 						              </Container>
 					</MDBAnimation>
