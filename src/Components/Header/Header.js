@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import Nav from '../Nav/Nav'
 import { 
   AppBar, 
@@ -14,8 +14,8 @@ import './Header.css';
 
 
 
-const Header = () => {
-    
+const Header = (props) => {
+    console.log(props)
     const companyName = 'MMS Landscaping'
 
 
@@ -32,15 +32,18 @@ const Header = () => {
                         </Typography>
                       </Link>
                     </IconButton>
-
+                {
+                  props.location.pathname === '/' ?
                       <Nav/>
-
+                      : 
+                      null
+                }
               </Toolbar>
           </AppBar>
       </header>
     )
 }
 
-export default Header
+export default withRouter(Header)
 
 

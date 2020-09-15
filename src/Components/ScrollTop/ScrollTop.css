@@ -2,7 +2,7 @@
     position: fixed; 
     z-index: 1000;
     cursor: pointer;
-    bottom: 2em;
+    bottom: 2.5em;
     right: .50em;
     background-color: #A2D45E;
     animation: fadeIn 0.1s ease-in-out 1s both;
@@ -11,10 +11,10 @@
 }
 
 @keyframes fadeIn {
-    to {
-      opacity: 0;
-    }
     from {
       opacity: 0.5;
+    }
+    to {
+      opacity: 0;
     }
   }
