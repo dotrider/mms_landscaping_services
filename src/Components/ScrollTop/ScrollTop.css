@@ -5,16 +5,16 @@
     bottom: 2.5em;
     right: .50em;
     background-color: #A2D45E;
-    animation: fadeIn 0.1s ease-in-out 1s both;
+    /* animation: fadeIn 0.1s ease-in-out 1s both; */
     width: 1.4em;
     height: 1.4em;
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
     from {
       opacity: 0.5;
     }
     to {
       opacity: 0;
     }
-  }
+  } */
