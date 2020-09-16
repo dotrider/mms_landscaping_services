@@ -22,7 +22,7 @@ const data = [
     }, {
         id: 4,
         name: 'Pavers',
-        img: "https://cdn.pixabay.com/photo/2013/12/14/00/30/pavement-228088_1280.jpg",
+        img: "https://st.depositphotos.com/1181789/1240/i/950/depositphotos_12407942-stock-photo-backyard-concrete-pavers-patio.jpg",
         description: 'Are you looking to transform your front or backyard with something with texture and character, unique and beutiful? Pavers is what you are looking for! In fact, pavers will complement your home\'s style in many ways, not just looks but also durability. Manufactured in a range of colors, textures and shapes to construct your vision into reality, we will transform you property into a more enjoyable outdoor experience, plus they are maintenance free!',
         details: ['Driveways', 'Walkways', 'Patios', 'Paths']
     }, {
@@ -34,7 +34,7 @@ const data = [
     }, {
         id: 6,
         name: 'Gravel & Rock',
-        img: "https://cdn.pixabay.com/photo/2012/12/20/10/13/gravel-71377_1280.jpg",
+        img: "https://cdn.pixabay.com/photo/2019/03/19/19/33/stones-4066696_1280.jpg",
         description: 'Gravel is a great choice if you are looking for low maintenance alternatives for your yard. If you are looking for gravel installation or spreading, we can help. We can get any type of gravel and size for your project needs',
         details: ['Rock', 'River rock', 'Gravel']
     }
